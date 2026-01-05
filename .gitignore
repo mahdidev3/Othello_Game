@@ -1,0 +1,118 @@
+# ==============================
+# Python
+# ==============================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ==============================
+# Virtual Environments
+# ==============================
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# ==============================
+# Packaging / Distribution
+# ==============================
+build/
+dist/
+.eggs/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ==============================
+# PyInstaller
+# ==============================
+*.manifest
+*.spec
+
+# ==============================
+# Unit Test / Coverage Reports
+# ==============================
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# ==============================
+# Logs
+# ==============================
+*.log
+
+# ==============================
+# Jupyter Notebook
+# ==============================
+.ipynb_checkpoints
+*.nbconvert.ipynb
+
+# ==============================
+# IDEs / Editors
+# ==============================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ==============================
+# OS Files
+# ==============================
+.DS_Store
+Thumbs.db
+
+# ==============================
+# Environment & Secrets
+# ==============================
+.env.*
+!.env.example
+secrets.yml
+*.pem
+*.key
+
+# ==============================
+# Django / Flask
+# ==============================
+*.sqlite3
+db.sqlite3
+instance/
+*.db
+
+# ==============================
+# Mypy / Pyright
+# ==============================
+.mypy_cache/
+.pyright/
+
+# ==============================
+# Ruff / Black
+# ==============================
+.ruff_cache/
+.black/
+
+# ==============================
+# Poetry
+# ==============================
+.poetry/
+
+# ==============================
+# PyCharm
+# ==============================
+.idea/
+
+# ==============================
+# Misc
+# ==============================
+*.tmp
+*.swp
