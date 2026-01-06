@@ -22,7 +22,7 @@ def parse_args() -> argparse.Namespace:
         "--depth", type=int, default=3, help="Search depth for tree agents."
     )
     parser.add_argument(
-        "--iterations", type=int, default=400, help="Iterations for MCTS."
+        "--iterations", type=int, default=600, help="Iterations for MCTS."
     )
     parser.add_argument(
         "--rollout-limit", type=int, default=150, help="Rollout cap for MCTS."
@@ -32,6 +32,11 @@ def parse_args() -> argparse.Namespace:
         action=argparse.BooleanOptionalAction,
         default=True,
         help="Enable colorful per-move logging (default: enabled).",
+    )
+    parser.add_argument(
+        "--sim-agent-name",
+        default="reflex",
+        help="Simulation agent name for MCTS.",
     )
     return parser.parse_args()
 
@@ -43,12 +48,14 @@ def main() -> None:
         depth=args.depth,
         iterations=args.iterations,
         rollout_limit=args.rollout_limit,
+        sim_agent_name=args.sim_agent_name,
     )
     agent_b = create_agent(
         args.agent2,
         depth=args.depth,
         iterations=args.iterations,
         rollout_limit=args.rollout_limit,
+        sim_agent_name=args.sim_agent_name,
     )
 
     result = run_tournament(agent_a, agent_b, games=args.games, verbose=args.verbose)

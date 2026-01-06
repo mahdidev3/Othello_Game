@@ -44,6 +44,7 @@ class MonteCarloTreeSearch(Agent):
         exploration_c: float = 1.4,
         rollout_limit: int = 80,
         seed: int | None = None,
+        sim_agent: Optional[Agent] = None,
     ):
         super().__init__(name="MCTS", seed=seed)
         self.iterations = int(iterations)
@@ -59,9 +60,11 @@ class MonteCarloTreeSearch(Agent):
             "legal_actions": {"calls": 0, "time": 0.0},
             "apply_action": {"calls": 0, "time": 0.0},
             "is_terminal": {"calls": 0, "time": 0.0},
+            "sim_agent": {"calls": 0, "time": 0.0},
         }
         self.rollout_count = 0
         self.random = random.Random(seed)
+        self.sim_agent = sim_agent
 
     def select_action(self, state: GameStateProtocol) -> Action:
         with Timer() as timer:
@@ -120,9 +123,6 @@ class MonteCarloTreeSearch(Agent):
         root = SearchNode(state=root_state, parent=None)
         root.untried_actions = list(root_state.legal_actions())
 
-        if not root.untried_actions:
-            return SearchResult(value=root_state.outcome(), move_probabilities={})
-
         for _ in range(self.iterations):
             node = self._select(root)
             with self._timeit("expand"):
@@ -171,71 +171,131 @@ class MonteCarloTreeSearch(Agent):
         return node
 
     def _rollout(self, state: GameStateProtocol) -> float:
+        # cur = state
+        # start_player = state.current_player
+        # steps = 0
+        # passes = 0
+        # mask_cache: dict[tuple[int, int], int] = {}
+        # local_counts = {
+        #     "legal_actions": {"calls": 0, "time": 0.0},
+        #     "apply_action": {"calls": 0, "time": 0.0},
+        #     "is_terminal": {"calls": 0, "time": 0.0},
+        #     "sim_agent": {"calls": 0, "time": 0.0},
+        # }
+
+        # while True:
+        #     player_bits, opp_bits = (
+        #         (cur.black, cur.white)
+        #         if cur.current_player == OthelloRules.PLAYER_BLACK
+        #         else (cur.white, cur.black)  # type: ignore[attr-defined]
+        #     )
+
+        #     t0 = time.perf_counter()
+        #     is_term = OthelloRules.is_terminal(
+        #         player_bits, opp_bits, cur.current_player, mask_cache=mask_cache
+        #     )
+        #     elapsed = time.perf_counter() - t0
+        #     local_counts["is_terminal"]["calls"] += 1
+        #     local_counts["is_terminal"]["time"] += elapsed
+
+        #     if is_term or steps >= self.rollout_limit:
+        #         if is_term:
+        #             value = cur.outcome(perspective=start_player)
+        #         else:
+        #             value = cur.evaluate(start_player)
+        #         break
+
+        #     # Always get legal moves first (needed for pass handling and for policies)
+        #     t0 = time.perf_counter()
+        #     moves = OthelloRules.legal_actions(
+        #         player_bits, opp_bits, mask_cache=mask_cache
+        #     )
+        #     elapsed = time.perf_counter() - t0
+        #     local_counts["legal_actions"]["calls"] += 1
+        #     local_counts["legal_actions"]["time"] += elapsed
+
+        #     if not moves:
+        #         t0 = time.perf_counter()
+        #         cur = cur.apply_action(None)
+        #         elapsed = time.perf_counter() - t0
+        #         local_counts["apply_action"]["calls"] += 1
+        #         local_counts["apply_action"]["time"] += elapsed
+
+        #         passes += 1
+        #         if passes >= 2:
+        #             value = cur.evaluate(start_player)
+        #             break
+        #         continue
+
+        #     passes = 0
+
+        #     random_s = self.random.random()
+
+        #     # Choose exactly one policy branch
+        #     if random_s < 0.5:
+        #         t0 = time.perf_counter()
+        #         mv = self._sim_agent_move(cur, moves)
+        #         elapsed = time.perf_counter() - t0
+        #         local_counts["sim_agent"]["calls"] += 1
+        #         local_counts["sim_agent"]["time"] += elapsed
+        #     elif random_s < 0.7:
+        #         mv = self.random.choice(moves)
+        #     else:
+        #         mv = self._heuristic_policy(cur, moves, mask_cache)
+
+        #     t0 = time.perf_counter()
+        #     cur = cur.apply_action(mv)
+        #     elapsed = time.perf_counter() - t0
+        #     local_counts["apply_action"]["calls"] += 1
+        #     local_counts["apply_action"]["time"] += elapsed
+
+        #     steps += 1
+        #     self._info.nodes_expanded += 1
+
         cur = state
         start_player = state.current_player
         steps = 0
         passes = 0
-        mask_cache: dict[tuple[int, int], int] = {}
+        value = None
         local_counts = {
             "legal_actions": {"calls": 0, "time": 0.0},
             "apply_action": {"calls": 0, "time": 0.0},
             "is_terminal": {"calls": 0, "time": 0.0},
+            "sim_agent": {"calls": 0, "time": 0.0},
         }
 
-        while True:
-            player_bits, opp_bits = (
-                (cur.black, cur.white)
-                if cur.current_player == OthelloRules.PLAYER_BLACK
-                else (cur.white, cur.black)  # type: ignore[attr-defined]
-            )
-            t0 = time.perf_counter()
-            is_term = OthelloRules.is_terminal(
-                player_bits, opp_bits, cur.current_player, mask_cache=mask_cache
-            )
-            elapsed = time.perf_counter() - t0
-            local_counts["is_terminal"]["calls"] += 1
-            local_counts["is_terminal"]["time"] += elapsed
-            if is_term or steps >= self.rollout_limit:
-                if is_term:
-                    value = cur.outcome(perspective=start_player)
-                else:
-                    value = cur.evaluate(start_player)
-                break
-            t0 = time.perf_counter()
-            moves = OthelloRules.legal_actions(
-                player_bits, opp_bits, mask_cache=mask_cache
-            )
-            elapsed = time.perf_counter() - t0
-            local_counts["legal_actions"]["calls"] += 1
-            local_counts["legal_actions"]["time"] += elapsed
-            if not moves:
+        while steps < self.rollout_limit:
+            if self.random.random() < 1:
                 t0 = time.perf_counter()
-                cur = cur.apply_action(None)
+                mv = self._sim_agent_move(cur)
                 elapsed = time.perf_counter() - t0
-                local_counts["apply_action"]["calls"] += 1
-                local_counts["apply_action"]["time"] += elapsed
-                passes += 1
-                if passes >= 2:
-                    value = cur.evaluate(start_player)
-                    break
-                continue
+                local_counts["sim_agent"]["calls"] += 1
+                local_counts["sim_agent"]["time"] += elapsed
+            else:
+                (mv, term_time, get_moves_time) = self._random_move(cur)
+                local_counts["is_terminal"]["calls"] += 1
+                local_counts["is_terminal"]["time"] += term_time
+                local_counts["legal_actions"]["calls"] += 1
+                local_counts["legal_actions"]["time"] += get_moves_time
 
-            passes = 0
-            mv = self._heuristic_policy(cur, moves, mask_cache)
             t0 = time.perf_counter()
             cur = cur.apply_action(mv)
             elapsed = time.perf_counter() - t0
             local_counts["apply_action"]["calls"] += 1
             local_counts["apply_action"]["time"] += elapsed
+
             steps += 1
-            self._info.nodes_expanded += 1
+            passes += 1 if mv is None else 0
+            if passes >= 2:
+                value = cur.evaluate(start_player)
+                break
 
         self.rollout_count += 1
         for key, counts in local_counts.items():
             self.rollout_call_totals[key]["calls"] += counts["calls"]
             self.rollout_call_totals[key]["time"] += counts["time"]
 
-        return value
+        return cur.outcome(perspective=start_player) if value is None else value
 
     def _heuristic_policy(
         self,
@@ -282,6 +342,26 @@ class MonteCarloTreeSearch(Agent):
             math.log(parent_visits + 1.0) / (child.visits + 1e-9)
         )
         return child.q_value() + exploration
+
+    def _sim_agent_move(self, state: GameStateProtocol) -> Action:
+        return self.sim_agent.select_action(state)
+
+    def _random_move(
+        self, state: GameStateProtocol
+    ) -> Optional[tuple[Action, float, float]]:
+        t0 = time.perf_counter()
+        is_terminal = state.is_terminal()
+        term_check_time = time.perf_counter() - t0
+        if is_terminal:
+            return None, term_check_time, 0.0
+
+        t0 = time.perf_counter()
+        legal_moves = list(state.legal_actions())
+        get_moves_time = time.perf_counter() - t0
+        if not legal_moves:
+            return None, term_check_time, get_moves_time
+
+        return (self.random.choice(legal_moves), term_check_time, get_moves_time)
 
     @staticmethod
     def _distribution_from_root(root: SearchNode) -> Dict[Action, float]:

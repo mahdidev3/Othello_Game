@@ -108,6 +108,7 @@ class OthelloRules:
     def legal_actions(
         player_bits: int,
         opp_bits: int,
+        include_pass: bool = False,
         mask_cache: Optional[dict[tuple[int, int], int]] = None,
     ) -> List[Action]:
         mask = OthelloRules.legal_moves_mask(player_bits, opp_bits, cache=mask_cache)
@@ -119,6 +120,12 @@ class OthelloRules:
             actions.append(bit_to_coord(idx))
             bb ^= lsb
         actions.sort()
+        if include_pass and not actions:
+            opp_mask = OthelloRules.legal_moves_mask(
+                opp_bits, player_bits, cache=mask_cache
+            )
+            if opp_mask:
+                actions.append(PASS_ACTION)
         return actions
 
     @staticmethod

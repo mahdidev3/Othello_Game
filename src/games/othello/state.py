@@ -36,7 +36,9 @@ class OthelloState(GameStateProtocol):
 
     def legal_actions(self) -> List[Action]:
         player_bits, opp_bits = self._player_bits()
-        actions = OthelloRules.legal_actions(player_bits, opp_bits)
+        actions = OthelloRules.legal_actions(
+            player_bits, opp_bits, include_pass=True
+        )
         return actions
 
     def apply_action(self, action: Action) -> "OthelloState":

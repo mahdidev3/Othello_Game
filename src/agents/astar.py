@@ -30,18 +30,25 @@ class AStarAgent(Agent):
             if not actions:
                 chosen: Action = None
             else:
-                pq: list[Tuple[float, int, Action, GameStateProtocol]] = []
+                pq: list[Tuple[float, int, int, Action, GameStateProtocol]] = []
                 visited: Dict[GameStateProtocol, float] = {}
                 best_score: Dict[Action, float] = {}
+
+                # tie-breaker counter to avoid comparing GameState objects
+                # in heap entries when earlier tuple elements are equal
+                counter = 0
 
                 for action in actions:
                     next_state = state.apply_action(action)
                     cost = 1
                     score = self._estimate(next_state, perspective)
-                    heapq.heappush(pq, (cost + score, cost, action, next_state))
+                    heapq.heappush(
+                        pq, (cost + score, cost, counter, action, next_state)
+                    )
+                    counter += 1
 
                 while pq:
-                    _, cost, first_action, node = heapq.heappop(pq)
+                    _, cost, _, first_action, node = heapq.heappop(pq)
                     if cost > self.depth_limit:
                         continue
 
@@ -66,15 +73,21 @@ class AStarAgent(Agent):
                         new_cost = cost + 1
                         estimate = self._estimate(child, perspective)
                         heapq.heappush(
-                            pq, (new_cost + estimate, new_cost, first_action, child)
+                            pq,
+                            (
+                                new_cost + estimate,
+                                new_cost,
+                                counter,
+                                first_action,
+                                child,
+                            ),
                         )
+                        counter += 1
 
                 if best_score:
                     chosen = max(
                         best_score.items(),
-                        key=lambda kv: kv[1]
-                        if kv[1] is not None
-                        else -float("inf"),
+                        key=lambda kv: kv[1] if kv[1] is not None else -float("inf"),
                     )[0]
                 else:
                     chosen = None

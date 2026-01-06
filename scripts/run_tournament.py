@@ -33,6 +33,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--rollout-limit", type=int, default=150, help="Rollout cap for MCTS."
     )
+    parser.add_argument(
+        "--sim-agent-name",
+        default="reflex",
+        help="Simulation agent name for MCTS.",
+    )
     return parser.parse_args()
 
 
@@ -44,6 +49,7 @@ def main() -> None:
             depth=args.depth,
             iterations=args.iterations,
             rollout_limit=args.rollout_limit,
+            sim_agent_name=args.sim_agent_name,
         )
         for name in args.agents
     ]
