@@ -53,6 +53,12 @@ class MonteCarloTreeSearch(Agent):
             "rollout": {"calls": 0, "time": 0.0},
             "backup": {"calls": 0, "time": 0.0},
         }
+        self.rollout_call_totals = {
+            "legal_actions": {"calls": 0, "time": 0.0},
+            "apply_action": {"calls": 0, "time": 0.0},
+            "is_terminal": {"calls": 0, "time": 0.0},
+        }
+        self.rollout_count = 0
         self.random = random.Random(seed)
 
     def select_action(self, state: GameStateProtocol) -> Action:
@@ -62,6 +68,12 @@ class MonteCarloTreeSearch(Agent):
         for name, data in self.search_overhead.items():
             self._info.extra[f"{name}_time"] = data["time"]
             self._info.extra[f"{name}_calls"] = float(data["calls"])
+        self._info.extra["rollouts"] = float(self.rollout_count)
+        for name, data in self.rollout_call_totals.items():
+            total_calls = data["calls"]
+            time_taken = data["time"]
+            self._info.extra[f"rollout_{name}_total_time"] = float(time_taken)
+            self._info.extra[f"rollout_{name}_total_calls"] = float(total_calls)
         self.set_last_search_info(
             {"policy": result.move_probabilities, "value": result.value}
         )
@@ -98,6 +110,10 @@ class MonteCarloTreeSearch(Agent):
         for data in self.search_overhead.values():
             data["calls"] = 0
             data["time"] = 0.0
+        self.rollout_count = 0
+        for key in self.rollout_call_totals:
+            self.rollout_call_totals[key]["calls"] = 0
+            self.rollout_call_totals[key]["time"] = 0.0
 
         root = SearchNode(state=root_state, parent=None)
         root.untried_actions = list(root_state.legal_actions())
@@ -157,11 +173,31 @@ class MonteCarloTreeSearch(Agent):
         start_player = state.current_player
         steps = 0
         passes = 0
+        local_counts = {
+            "legal_actions": {"calls": 0, "time": 0.0},
+            "apply_action": {"calls": 0, "time": 0.0},
+            "is_terminal": {"calls": 0, "time": 0.0},
+        }
 
-        while not cur.is_terminal() and steps < self.rollout_limit:
+        while True:
+            t0 = time.perf_counter()
+            is_term = cur.is_terminal()
+            elapsed = time.perf_counter() - t0
+            local_counts["is_terminal"]["calls"] += 1
+            local_counts["is_terminal"]["time"] += elapsed
+            if is_term or steps >= self.rollout_limit:
+                break
+            t0 = time.perf_counter()
             moves = cur.legal_actions()
+            elapsed = time.perf_counter() - t0
+            local_counts["legal_actions"]["calls"] += 1
+            local_counts["legal_actions"]["time"] += elapsed
             if not moves:
+                t0 = time.perf_counter()
                 cur = cur.apply_action(None)
+                elapsed = time.perf_counter() - t0
+                local_counts["apply_action"]["calls"] += 1
+                local_counts["apply_action"]["time"] += elapsed
                 passes += 1
                 if passes >= 2:
                     break
@@ -169,9 +205,18 @@ class MonteCarloTreeSearch(Agent):
 
             passes = 0
             mv = self._biased_choice(moves)
+            t0 = time.perf_counter()
             cur = cur.apply_action(mv)
+            elapsed = time.perf_counter() - t0
+            local_counts["apply_action"]["calls"] += 1
+            local_counts["apply_action"]["time"] += elapsed
             steps += 1
             self._info.nodes_expanded += 1
+
+        self.rollout_count += 1
+        for key, counts in local_counts.items():
+            self.rollout_call_totals[key]["calls"] += counts["calls"]
+            self.rollout_call_totals[key]["time"] += counts["time"]
 
         return cur.outcome(perspective=start_player)
 

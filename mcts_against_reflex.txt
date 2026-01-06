@@ -12,28 +12,35 @@ Current state:
 6 · · · · · · · ·
 7 · · · · · · · ·
 Turn: BLACK | Legal moves: 4 | Score (B/W): 2/2
-Selected move: (4, 5)
-Search time: 1.853520s
-Nodes expanded this turn: 55059
+Selected move: (2, 3)
+Search time: 2.012729s
+Nodes expanded this turn: 55109
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.0018757014768198133
+  backup_time: 0.001985401730053127
   expand_calls: 1000.0
-  expand_time: 0.016287599923089147
+  expand_time: 0.017188401543535292
+  rollout_apply_action_total_calls: 55497.0
+  rollout_apply_action_total_time: 0.6871075014350936
   rollout_calls: 1000.0
-  rollout_time: 1.7868679013336077
+  rollout_is_terminal_total_calls: 56497.0
+  rollout_is_terminal_total_time: 0.4848916041664779
+  rollout_legal_actions_total_calls: 55497.0
+  rollout_legal_actions_total_time: 0.616447601467371
+  rollout_time: 1.9434057007310912
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.015349699184298515
+  select_time: 0.016207900713197887
 Algorithm insights:
-  value: -0.0780
-  policy (top 4): (4, 5): 0.437, (5, 4): 0.281, (3, 2): 0.182, (2, 3): 0.100
+  value: -0.1060
+  policy (top 4): (2, 3): 0.366, (3, 2): 0.340, (4, 5): 0.163, (5, 4): 0.131
 Resulting state:
    0 1 2 3 4 5 6 7
 0 · · · · · · · ·
 1 · · · · · · · ·
-2 · · · · · · · ·
-3 · · · ○ ● · · ·
-4 · · · ● ● ● · ·
+2 · · · ● · · · ·
+3 · · · ● ● · · ·
+4 · · · ● ○ · · ·
 5 · · · · · · · ·
 6 · · · · · · · ·
 7 · · · · · · · ·
@@ -44,23 +51,23 @@ Current state:
    0 1 2 3 4 5 6 7
 0 · · · · · · · ·
 1 · · · · · · · ·
-2 · · · · · · · ·
-3 · · · ○ ● · · ·
-4 · · · ● ● ● · ·
+2 · · · ● · · · ·
+3 · · · ● ● · · ·
+4 · · · ● ○ · · ·
 5 · · · · · · · ·
 6 · · · · · · · ·
 7 · · · · · · · ·
 Turn: WHITE | Legal moves: 3 | Score (B/W): 4/1
-Selected move: (5, 5)
-Search time: 0.000202s
+Selected move: (2, 2)
+Search time: 0.000230s
 Resulting state:
    0 1 2 3 4 5 6 7
 0 · · · · · · · ·
 1 · · · · · · · ·
-2 · · · · · · · ·
+2 · · ○ ● · · · ·
 3 · · · ○ ● · · ·
-4 · · · ● ○ ● · ·
-5 · · · · · ○ · ·
+4 · · · ● ○ · · ·
+5 · · · · · · · ·
 6 · · · · · · · ·
 7 · · · · · · · ·
 Turn: BLACK | Legal moves: 4 | Score (B/W): 3/3
@@ -70,1881 +77,2161 @@ Current state:
    0 1 2 3 4 5 6 7
 0 · · · · · · · ·
 1 · · · · · · · ·
-2 · · · · · · · ·
+2 · · ○ ● · · · ·
 3 · · · ○ ● · · ·
-4 · · · ● ○ ● · ·
-5 · · · · · ○ · ·
+4 · · · ● ○ · · ·
+5 · · · · · · · ·
 6 · · · · · · · ·
 7 · · · · · · · ·
 Turn: BLACK | Legal moves: 4 | Score (B/W): 3/3
 Selected move: (5, 4)
-Search time: 1.791669s
-Nodes expanded this turn: 53208
+Search time: 1.933533s
+Nodes expanded this turn: 53408
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.0017516002990305424
+  backup_time: 0.0018890983192250133
   expand_calls: 1000.0
-  expand_time: 0.016104702604934573
+  expand_time: 0.017255003098398447
+  rollout_apply_action_total_calls: 53805.0
+  rollout_apply_action_total_time: 0.6587481166934595
   rollout_calls: 1000.0
-  rollout_time: 1.721729899640195
+  rollout_is_terminal_total_calls: 54805.0
+  rollout_is_terminal_total_time: 0.46322097873780876
+  rollout_legal_actions_total_calls: 53805.0
+  rollout_legal_actions_total_time: 0.5884639141149819
+  rollout_time: 1.860417198506184
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.016594698885455728
+  select_time: 0.016318202600814402
 Algorithm insights:
-  value: -0.2100
-  policy (top 4): (5, 4): 0.611, (2, 3): 0.274, (6, 5): 0.091, (3, 2): 0.024
+  value: -0.1140
+  policy (top 4): (5, 4): 0.455, (4, 5): 0.298, (3, 2): 0.231, (2, 1): 0.016
 Resulting state:
    0 1 2 3 4 5 6 7
 0 · · · · · · · ·
 1 · · · · · · · ·
-2 · · · · · · · ·
+2 · · ○ ● · · · ·
 3 · · · ○ ● · · ·
-4 · · · ● ● ● · ·
-5 · · · · ● ○ · ·
+4 · · · ● ● · · ·
+5 · · · · ● · · ·
 6 · · · · · · · ·
 7 · · · · · · · ·
-Turn: WHITE | Legal moves: 2 | Score (B/W): 5/2
+Turn: WHITE | Legal moves: 5 | Score (B/W): 5/2
 
 === Move 4 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
 0 · · · · · · · ·
 1 · · · · · · · ·
-2 · · · · · · · ·
+2 · · ○ ● · · · ·
 3 · · · ○ ● · · ·
-4 · · · ● ● ● · ·
-5 · · · · ● ○ · ·
+4 · · · ● ● · · ·
+5 · · · · ● · · ·
 6 · · · · · · · ·
 7 · · · · · · · ·
-Turn: WHITE | Legal moves: 2 | Score (B/W): 5/2
-Selected move: (3, 5)
-Search time: 0.000144s
+Turn: WHITE | Legal moves: 5 | Score (B/W): 5/2
+Selected move: (5, 5)
+Search time: 0.000273s
 Resulting state:
    0 1 2 3 4 5 6 7
 0 · · · · · · · ·
 1 · · · · · · · ·
-2 · · · · · · · ·
-3 · · · ○ ○ ○ · ·
-4 · · · ● ● ○ · ·
+2 · · ○ ● · · · ·
+3 · · · ○ ● · · ·
+4 · · · ● ○ · · ·
 5 · · · · ● ○ · ·
 6 · · · · · · · ·
 7 · · · · · · · ·
-Turn: BLACK | Legal moves: 9 | Score (B/W): 3/5
+Turn: BLACK | Legal moves: 4 | Score (B/W): 4/4
 
 === Move 5 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
 0 · · · · · · · ·
 1 · · · · · · · ·
-2 · · · · · · · ·
-3 · · · ○ ○ ○ · ·
-4 · · · ● ● ○ · ·
+2 · · ○ ● · · · ·
+3 · · · ○ ● · · ·
+4 · · · ● ○ · · ·
 5 · · · · ● ○ · ·
 6 · · · · · · · ·
 7 · · · · · · · ·
-Turn: BLACK | Legal moves: 9 | Score (B/W): 3/5
-Selected move: (6, 6)
-Search time: 1.798751s
-Nodes expanded this turn: 52179
+Turn: BLACK | Legal moves: 4 | Score (B/W): 4/4
+Selected move: (3, 2)
+Search time: 2.025065s
+Nodes expanded this turn: 51688
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.001690397853963077
+  backup_time: 0.0020003003301098943
   expand_calls: 1000.0
-  expand_time: 0.0165815984364599
+  expand_time: 0.018508401000872254
+  rollout_apply_action_total_calls: 52085.0
+  rollout_apply_action_total_time: 0.6903492115670815
   rollout_calls: 1000.0
-  rollout_time: 1.7298013980034739
+  rollout_is_terminal_total_calls: 53085.0
+  rollout_is_terminal_total_time: 0.4868189118569717
+  rollout_legal_actions_total_calls: 52085.0
+  rollout_legal_actions_total_time: 0.6164367023156956
+  rollout_time: 1.9493284980999306
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.01696830044966191
+  select_time: 0.01771780091803521
 Algorithm insights:
-  value: -0.1930
-  policy (top 5): (6, 6): 0.490, (4, 6): 0.113, (3, 6): 0.104, (2, 3): 0.082, (2, 4): 0.072
+  value: -0.2340
+  policy (top 4): (3, 2): 0.575, (2, 1): 0.253, (4, 5): 0.102, (5, 6): 0.070
 Resulting state:
    0 1 2 3 4 5 6 7
 0 · · · · · · · ·
 1 · · · · · · · ·
-2 · · · · · · · ·
-3 · · · ○ ○ ○ · ·
-4 · · · ● ● ○ · ·
-5 · · · · ● ● · ·
-6 · · · · · · ● ·
+2 · · ○ ● · · · ·
+3 · · ● ● ● · · ·
+4 · · · ● ○ · · ·
+5 · · · · ● ○ · ·
+6 · · · · · · · ·
 7 · · · · · · · ·
-Turn: WHITE | Legal moves: 7 | Score (B/W): 5/4
+Turn: WHITE | Legal moves: 4 | Score (B/W): 6/3
 
 === Move 6 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
 0 · · · · · · · ·
 1 · · · · · · · ·
-2 · · · · · · · ·
-3 · · · ○ ○ ○ · ·
-4 · · · ● ● ○ · ·
-5 · · · · ● ● · ·
-6 · · · · · · ● ·
+2 · · ○ ● · · · ·
+3 · · ● ● ● · · ·
+4 · · · ● ○ · · ·
+5 · · · · ● ○ · ·
+6 · · · · · · · ·
 7 · · · · · · · ·
-Turn: WHITE | Legal moves: 7 | Score (B/W): 5/4
-Selected move: (7, 7)
-Search time: 0.000417s
+Turn: WHITE | Legal moves: 4 | Score (B/W): 6/3
+Selected move: (4, 2)
+Search time: 0.000249s
 Resulting state:
    0 1 2 3 4 5 6 7
 0 · · · · · · · ·
 1 · · · · · · · ·
-2 · · · · · · · ·
-3 · · · ○ ○ ○ · ·
-4 · · · ● ○ ○ · ·
+2 · · ○ ● · · · ·
+3 · · ○ ● ● · · ·
+4 · · ○ ○ ○ · · ·
 5 · · · · ● ○ · ·
-6 · · · · · · ○ ·
-7 · · · · · · · ○
-Turn: BLACK | Legal moves: 6 | Score (B/W): 2/8
+6 · · · · · · · ·
+7 · · · · · · · ·
+Turn: BLACK | Legal moves: 9 | Score (B/W): 4/6
 
 === Move 7 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
 0 · · · · · · · ·
 1 · · · · · · · ·
-2 · · · · · · · ·
-3 · · · ○ ○ ○ · ·
-4 · · · ● ○ ○ · ·
+2 · · ○ ● · · · ·
+3 · · ○ ● ● · · ·
+4 · · ○ ○ ○ · · ·
 5 · · · · ● ○ · ·
-6 · · · · · · ○ ·
-7 · · · · · · · ○
-Turn: BLACK | Legal moves: 6 | Score (B/W): 2/8
-Selected move: (5, 6)
-Search time: 1.727027s
-Nodes expanded this turn: 50270
+6 · · · · · · · ·
+7 · · · · · · · ·
+Turn: BLACK | Legal moves: 9 | Score (B/W): 4/6
+Selected move: (6, 6)
+Search time: 1.937181s
+Nodes expanded this turn: 50513
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.0016168002039194107
+  backup_time: 0.0017713002162054181
   expand_calls: 1000.0
-  expand_time: 0.016323299729265273
+  expand_time: 0.017836399609223008
+  rollout_apply_action_total_calls: 50878.0
+  rollout_apply_action_total_time: 0.6578750185435638
   rollout_calls: 1000.0
-  rollout_time: 1.661979703581892
+  rollout_is_terminal_total_calls: 51878.0
+  rollout_is_terminal_total_time: 0.4631849998841062
+  rollout_legal_actions_total_calls: 50878.0
+  rollout_legal_actions_total_time: 0.5933903015684336
+  rollout_time: 1.8647644966840744
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.015097697614692152
+  select_time: 0.01779670058749616
 Algorithm insights:
-  value: -0.4400
-  policy (top 5): (5, 6): 0.332, (3, 6): 0.231, (4, 6): 0.204, (2, 5): 0.130, (2, 4): 0.066
+  value: -0.3250
+  policy (top 5): (6, 6): 0.293, (1, 1): 0.238, (4, 1): 0.132, (5, 3): 0.124, (5, 1): 0.073
 Resulting state:
    0 1 2 3 4 5 6 7
 0 · · · · · · · ·
 1 · · · · · · · ·
-2 · · · · · · · ·
-3 · · · ○ ○ ○ · ·
-4 · · · ● ○ ○ · ·
-5 · · · · ● ● ● ·
-6 · · · · · · ○ ·
-7 · · · · · · · ○
-Turn: WHITE | Legal moves: 8 | Score (B/W): 4/7
+2 · · ○ ● · · · ·
+3 · · ○ ● ● · · ·
+4 · · ○ ○ ● · · ·
+5 · · · · ● ● · ·
+6 · · · · · · ● ·
+7 · · · · · · · ·
+Turn: WHITE | Legal moves: 8 | Score (B/W): 7/4
 
 === Move 8 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
 0 · · · · · · · ·
 1 · · · · · · · ·
-2 · · · · · · · ·
-3 · · · ○ ○ ○ · ·
-4 · · · ● ○ ○ · ·
-5 · · · · ● ● ● ·
-6 · · · · · · ○ ·
-7 · · · · · · · ○
-Turn: WHITE | Legal moves: 8 | Score (B/W): 4/7
-Selected move: (6, 5)
-Search time: 0.000436s
+2 · · ○ ● · · · ·
+3 · · ○ ● ● · · ·
+4 · · ○ ○ ● · · ·
+5 · · · · ● ● · ·
+6 · · · · · · ● ·
+7 · · · · · · · ·
+Turn: WHITE | Legal moves: 8 | Score (B/W): 7/4
+Selected move: (7, 7)
+Search time: 0.000453s
 Resulting state:
    0 1 2 3 4 5 6 7
 0 · · · · · · · ·
 1 · · · · · · · ·
-2 · · · · · · · ·
-3 · · · ○ ○ ○ · ·
-4 · · · ● ○ ○ · ·
-5 · · · · ● ○ ● ·
-6 · · · · · ○ ○ ·
+2 · · ○ ● · · · ·
+3 · · ○ ○ ● · · ·
+4 · · ○ ○ ○ · · ·
+5 · · · · ● ○ · ·
+6 · · · · · · ○ ·
 7 · · · · · · · ○
-Turn: BLACK | Legal moves: 7 | Score (B/W): 3/9
+Turn: BLACK | Legal moves: 6 | Score (B/W): 3/9
 
 === Move 9 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
 0 · · · · · · · ·
 1 · · · · · · · ·
-2 · · · · · · · ·
-3 · · · ○ ○ ○ · ·
-4 · · · ● ○ ○ · ·
-5 · · · · ● ○ ● ·
-6 · · · · · ○ ○ ·
+2 · · ○ ● · · · ·
+3 · · ○ ○ ● · · ·
+4 · · ○ ○ ○ · · ·
+5 · · · · ● ○ · ·
+6 · · · · · · ○ ·
 7 · · · · · · · ○
-Turn: BLACK | Legal moves: 7 | Score (B/W): 3/9
-Selected move: (4, 6)
-Search time: 1.616980s
-Nodes expanded this turn: 48622
+Turn: BLACK | Legal moves: 6 | Score (B/W): 3/9
+Selected move: (5, 6)
+Search time: 1.878108s
+Nodes expanded this turn: 48437
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.0015401009004563093
+  backup_time: 0.0017813009908422828
   expand_calls: 1000.0
-  expand_time: 0.01586379937361926
+  expand_time: 0.01805850036907941
+  rollout_apply_action_total_calls: 48829.0
+  rollout_apply_action_total_time: 0.638039791258052
   rollout_calls: 1000.0
-  rollout_time: 1.549225299153477
+  rollout_is_terminal_total_calls: 49829.0
+  rollout_is_terminal_total_time: 0.4497218964388594
+  rollout_legal_actions_total_calls: 48829.0
+  rollout_legal_actions_total_time: 0.5716543023008853
+  rollout_time: 1.8035480990074575
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.015821198234334588
+  select_time: 0.016182700754143298
 Algorithm insights:
-  value: -0.4320
-  policy (top 5): (4, 6): 0.200, (2, 4): 0.183, (7, 4): 0.147, (7, 6): 0.144, (3, 6): 0.143
+  value: -0.4530
+  policy (top 5): (5, 6): 0.302, (5, 2): 0.197, (4, 1): 0.196, (3, 1): 0.113, (5, 3): 0.111
 Resulting state:
    0 1 2 3 4 5 6 7
 0 · · · · · · · ·
 1 · · · · · · · ·
-2 · · · · · · · ·
-3 · · · ○ ○ ○ · ·
-4 · · · ● ● ● ● ·
-5 · · · · ● ○ ● ·
-6 · · · · · ○ ○ ·
+2 · · ○ ● · · · ·
+3 · · ○ ○ ● · · ·
+4 · · ○ ○ ○ · · ·
+5 · · · · ● ● ● ·
+6 · · · · · · ○ ·
 7 · · · · · · · ○
-Turn: WHITE | Legal moves: 9 | Score (B/W): 6/7
+Turn: WHITE | Legal moves: 8 | Score (B/W): 5/8
 
 === Move 10 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
 0 · · · · · · · ·
 1 · · · · · · · ·
-2 · · · · · · · ·
-3 · · · ○ ○ ○ · ·
-4 · · · ● ● ● ● ·
-5 · · · · ● ○ ● ·
-6 · · · · · ○ ○ ·
+2 · · ○ ● · · · ·
+3 · · ○ ○ ● · · ·
+4 · · ○ ○ ○ · · ·
+5 · · · · ● ● ● ·
+6 · · · · · · ○ ·
 7 · · · · · · · ○
-Turn: WHITE | Legal moves: 9 | Score (B/W): 6/7
-Selected move: (6, 7)
-Search time: 0.000403s
+Turn: WHITE | Legal moves: 8 | Score (B/W): 5/8
+Selected move: (1, 3)
+Search time: 0.000477s
 Resulting state:
    0 1 2 3 4 5 6 7
 0 · · · · · · · ·
-1 · · · · · · · ·
-2 · · · · · · · ·
-3 · · · ○ ○ ○ · ·
-4 · · · ● ● ○ ● ·
-5 · · · · ● ○ ○ ·
-6 · · · · · ○ ○ ○
+1 · · · ○ · · · ·
+2 · · ○ ○ · · · ·
+3 · · ○ ○ ● · · ·
+4 · · ○ ○ ○ · · ·
+5 · · · · ● ● ● ·
+6 · · · · · · ○ ·
 7 · · · · · · · ○
-Turn: BLACK | Legal moves: 9 | Score (B/W): 4/10
+Turn: BLACK | Legal moves: 6 | Score (B/W): 4/10
 
 === Move 11 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
 0 · · · · · · · ·
-1 · · · · · · · ·
-2 · · · · · · · ·
-3 · · · ○ ○ ○ · ·
-4 · · · ● ● ○ ● ·
-5 · · · · ● ○ ○ ·
-6 · · · · · ○ ○ ○
+1 · · · ○ · · · ·
+2 · · ○ ○ · · · ·
+3 · · ○ ○ ● · · ·
+4 · · ○ ○ ○ · · ·
+5 · · · · ● ● ● ·
+6 · · · · · · ○ ·
 7 · · · · · · · ○
-Turn: BLACK | Legal moves: 9 | Score (B/W): 4/10
-Selected move: (7, 6)
-Search time: 1.604194s
-Nodes expanded this turn: 46695
+Turn: BLACK | Legal moves: 6 | Score (B/W): 4/10
+Selected move: (1, 1)
+Search time: 1.769578s
+Nodes expanded this turn: 46403
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.0015943999169394374
+  backup_time: 0.0017393006710335612
   expand_calls: 1000.0
-  expand_time: 0.016597200301475823
+  expand_time: 0.01760540099348873
+  rollout_apply_action_total_calls: 46819.0
+  rollout_apply_action_total_time: 0.6032414070796221
   rollout_calls: 1000.0
-  rollout_time: 1.5369374004658312
+  rollout_is_terminal_total_calls: 47819.0
+  rollout_is_terminal_total_time: 0.42258430318906903
+  rollout_legal_actions_total_calls: 46819.0
+  rollout_legal_actions_total_time: 0.5368924041977152
+  rollout_time: 1.6987959000980482
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.01603889965917915
+  select_time: 0.01712270244024694
 Algorithm insights:
-  value: -0.5200
-  policy (top 5): (7, 6): 0.224, (3, 6): 0.182, (2, 3): 0.151, (2, 5): 0.116, (5, 7): 0.084
+  value: -0.5050
+  policy (top 5): (1, 1): 0.552, (7, 6): 0.143, (3, 1): 0.110, (5, 2): 0.089, (2, 1): 0.056
 Resulting state:
    0 1 2 3 4 5 6 7
 0 · · · · · · · ·
-1 · · · · · · · ·
-2 · · · · · · · ·
-3 · · · ○ ○ ○ · ·
-4 · · · ● ● ○ ● ·
-5 · · · · ● ○ ● ·
-6 · · · · · ● ● ○
-7 · · · · · · ● ○
-Turn: WHITE | Legal moves: 9 | Score (B/W): 8/7
+1 · ● · ○ · · · ·
+2 · · ● ○ · · · ·
+3 · · ○ ● ● · · ·
+4 · · ○ ○ ● · · ·
+5 · · · · ● ● ● ·
+6 · · · · · · ○ ·
+7 · · · · · · · ○
+Turn: WHITE | Legal moves: 10 | Score (B/W): 8/7
 
 === Move 12 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
 0 · · · · · · · ·
-1 · · · · · · · ·
-2 · · · · · · · ·
-3 · · · ○ ○ ○ · ·
-4 · · · ● ● ○ ● ·
-5 · · · · ● ○ ● ·
-6 · · · · · ● ● ○
-7 · · · · · · ● ○
-Turn: WHITE | Legal moves: 9 | Score (B/W): 8/7
-Selected move: (4, 7)
-Search time: 0.000524s
+1 · ● · ○ · · · ·
+2 · · ● ○ · · · ·
+3 · · ○ ● ● · · ·
+4 · · ○ ○ ● · · ·
+5 · · · · ● ● ● ·
+6 · · · · · · ○ ·
+7 · · · · · · · ○
+Turn: WHITE | Legal moves: 10 | Score (B/W): 8/7
+Selected move: (0, 0)
+Search time: 0.000567s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · · · · · · · ·
-1 · · · · · · · ·
-2 · · · · · · · ·
-3 · · · ○ ○ ○ · ·
-4 · · · ● ● ○ ○ ○
+0 ○ · · · · · · ·
+1 · ○ · ○ · · · ·
+2 · · ○ ○ · · · ·
+3 · · ○ ○ ● · · ·
+4 · · ○ ○ ○ · · ·
 5 · · · · ● ○ ● ·
-6 · · · · · ● ● ○
-7 · · · · · · ● ○
-Turn: BLACK | Legal moves: 6 | Score (B/W): 7/9
+6 · · · · · · ○ ·
+7 · · · · · · · ○
+Turn: BLACK | Legal moves: 5 | Score (B/W): 3/13
 
 === Move 13 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · · · · · · · ·
-1 · · · · · · · ·
-2 · · · · · · · ·
-3 · · · ○ ○ ○ · ·
-4 · · · ● ● ○ ○ ○
+0 ○ · · · · · · ·
+1 · ○ · ○ · · · ·
+2 · · ○ ○ · · · ·
+3 · · ○ ○ ● · · ·
+4 · · ○ ○ ○ · · ·
 5 · · · · ● ○ ● ·
-6 · · · · · ● ● ○
-7 · · · · · · ● ○
-Turn: BLACK | Legal moves: 6 | Score (B/W): 7/9
-Selected move: (2, 6)
-Search time: 1.531895s
-Nodes expanded this turn: 44467
+6 · · · · · · ○ ·
+7 · · · · · · · ○
+Turn: BLACK | Legal moves: 5 | Score (B/W): 3/13
+Selected move: (7, 6)
+Search time: 1.690329s
+Nodes expanded this turn: 44313
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.0016081980429589748
+  backup_time: 0.0018191018607467413
   expand_calls: 1000.0
-  expand_time: 0.016403598710894585
+  expand_time: 0.018059900496155024
+  rollout_apply_action_total_calls: 44710.0
+  rollout_apply_action_total_time: 0.5741897925036028
   rollout_calls: 1000.0
-  rollout_time: 1.461259999196045
+  rollout_is_terminal_total_calls: 45710.0
+  rollout_is_terminal_total_time: 0.4031335056060925
+  rollout_legal_actions_total_calls: 44710.0
+  rollout_legal_actions_total_time: 0.5085577015997842
+  rollout_time: 1.6194911000784487
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.016232401598244905
+  select_time: 0.01663439953699708
 Algorithm insights:
-  value: -0.5660
-  policy (top 5): (2, 6): 0.250, (3, 6): 0.224, (2, 3): 0.207, (2, 4): 0.170, (2, 5): 0.084
+  value: -0.6550
+  policy (top 5): (7, 6): 0.376, (2, 1): 0.304, (1, 2): 0.134, (3, 1): 0.099, (5, 2): 0.087
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · · · · · · · ·
-1 · · · · · · · ·
-2 · · · · · · ● ·
-3 · · · ○ ○ ● · ·
-4 · · · ● ● ○ ○ ○
+0 ○ · · · · · · ·
+1 · ○ · ○ · · · ·
+2 · · ○ ○ · · · ·
+3 · · ○ ○ ● · · ·
+4 · · ○ ○ ○ · · ·
 5 · · · · ● ○ ● ·
-6 · · · · · ● ● ○
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: WHITE | Legal moves: 11 | Score (B/W): 9/8
+Turn: WHITE | Legal moves: 9 | Score (B/W): 5/12
 
 === Move 14 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · · · · · · · ·
-1 · · · · · · · ·
-2 · · · · · · ● ·
-3 · · · ○ ○ ● · ·
-4 · · · ● ● ○ ○ ○
+0 ○ · · · · · · ·
+1 · ○ · ○ · · · ·
+2 · · ○ ○ · · · ·
+3 · · ○ ○ ● · · ·
+4 · · ○ ○ ○ · · ·
 5 · · · · ● ○ ● ·
-6 · · · · · ● ● ○
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: WHITE | Legal moves: 11 | Score (B/W): 9/8
-Selected move: (3, 6)
-Search time: 0.000669s
+Turn: WHITE | Legal moves: 9 | Score (B/W): 5/12
+Selected move: (2, 4)
+Search time: 0.000349s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · · · · · · · ·
-1 · · · · · · · ·
-2 · · · · · · ● ·
-3 · · · ○ ○ ○ ○ ·
-4 · · · ● ● ○ ○ ○
+0 ○ · · · · · · ·
+1 · ○ · ○ · · · ·
+2 · · ○ ○ ○ · · ·
+3 · · ○ ○ ○ · · ·
+4 · · ○ ○ ○ · · ·
 5 · · · · ● ○ ● ·
-6 · · · · · ● ● ○
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: BLACK | Legal moves: 5 | Score (B/W): 8/10
+Turn: BLACK | Legal moves: 2 | Score (B/W): 4/14
 
 === Move 15 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · · · · · · · ·
-1 · · · · · · · ·
-2 · · · · · · ● ·
-3 · · · ○ ○ ○ ○ ·
-4 · · · ● ● ○ ○ ○
+0 ○ · · · · · · ·
+1 · ○ · ○ · · · ·
+2 · · ○ ○ ○ · · ·
+3 · · ○ ○ ○ · · ·
+4 · · ○ ○ ○ · · ·
 5 · · · · ● ○ ● ·
-6 · · · · · ● ● ○
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: BLACK | Legal moves: 5 | Score (B/W): 8/10
-Selected move: (2, 4)
-Search time: 1.452691s
-Nodes expanded this turn: 42451
+Turn: BLACK | Legal moves: 2 | Score (B/W): 4/14
+Selected move: (1, 4)
+Search time: 1.608908s
+Nodes expanded this turn: 42007
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.0016325988108292222
+  backup_time: 0.0018047994235530496
   expand_calls: 1000.0
-  expand_time: 0.016660199384205043
+  expand_time: 0.017822197871282697
+  rollout_apply_action_total_calls: 42365.0
+  rollout_apply_action_total_time: 0.5471363036194816
   rollout_calls: 1000.0
-  rollout_time: 1.3822140984702855
+  rollout_is_terminal_total_calls: 43365.0
+  rollout_is_terminal_total_time: 0.3826528867939487
+  rollout_legal_actions_total_calls: 42365.0
+  rollout_legal_actions_total_time: 0.4844544032821432
+  rollout_time: 1.5386913008987904
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.0164415001636371
+  select_time: 0.015891101793386042
 Algorithm insights:
-  value: -0.4600
-  policy (top 5): (2, 4): 0.476, (2, 7): 0.195, (2, 5): 0.139, (2, 2): 0.135, (2, 3): 0.055
+  value: -0.6660
+  policy (top 2): (1, 4): 0.505, (2, 1): 0.495
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · · · · · · · ·
-1 · · · · · · · ·
-2 · · · · ● · ● ·
-3 · · · ○ ● ○ ○ ·
-4 · · · ● ● ○ ○ ○
+0 ○ · · · · · · ·
+1 · ○ · ○ ● · · ·
+2 · · ○ ○ ● · · ·
+3 · · ○ ○ ● · · ·
+4 · · ○ ○ ● · · ·
 5 · · · · ● ○ ● ·
-6 · · · · · ● ● ○
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: WHITE | Legal moves: 12 | Score (B/W): 10/9
+Turn: WHITE | Legal moves: 9 | Score (B/W): 8/11
 
 === Move 16 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · · · · · · · ·
-1 · · · · · · · ·
-2 · · · · ● · ● ·
-3 · · · ○ ● ○ ○ ·
-4 · · · ● ● ○ ○ ○
+0 ○ · · · · · · ·
+1 · ○ · ○ ● · · ·
+2 · · ○ ○ ● · · ·
+3 · · ○ ○ ● · · ·
+4 · · ○ ○ ● · · ·
 5 · · · · ● ○ ● ·
-6 · · · · · ● ● ○
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: WHITE | Legal moves: 12 | Score (B/W): 10/9
-Selected move: (2, 3)
-Search time: 0.000591s
+Turn: WHITE | Legal moves: 9 | Score (B/W): 8/11
+Selected move: (2, 5)
+Search time: 0.000491s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · · · · · · · ·
-1 · · · · · · · ·
-2 · · · ○ ● · ● ·
-3 · · · ○ ○ ○ ○ ·
-4 · · · ● ● ○ ○ ○
+0 ○ · · · · · · ·
+1 · ○ · ○ ● · · ·
+2 · · ○ ○ ○ ○ · ·
+3 · · ○ ○ ○ · · ·
+4 · · ○ ○ ● · · ·
 5 · · · · ● ○ ● ·
-6 · · · · · ● ● ○
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: BLACK | Legal moves: 7 | Score (B/W): 9/11
+Turn: BLACK | Legal moves: 4 | Score (B/W): 6/14
 
 === Move 17 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · · · · · · · ·
-1 · · · · · · · ·
-2 · · · ○ ● · ● ·
-3 · · · ○ ○ ○ ○ ·
-4 · · · ● ● ○ ○ ○
+0 ○ · · · · · · ·
+1 · ○ · ○ ● · · ·
+2 · · ○ ○ ○ ○ · ·
+3 · · ○ ○ ○ · · ·
+4 · · ○ ○ ● · · ·
 5 · · · · ● ○ ● ·
-6 · · · · · ● ● ○
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: BLACK | Legal moves: 7 | Score (B/W): 9/11
-Selected move: (5, 7)
-Search time: 1.415546s
-Nodes expanded this turn: 40757
+Turn: BLACK | Legal moves: 4 | Score (B/W): 6/14
+Selected move: (2, 1)
+Search time: 1.501988s
+Nodes expanded this turn: 40459
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.0015993992565199733
+  backup_time: 0.0017630986403673887
   expand_calls: 1000.0
-  expand_time: 0.01670580019708723
+  expand_time: 0.017598899663425982
+  rollout_apply_action_total_calls: 40865.0
+  rollout_apply_action_total_time: 0.5053490105783567
   rollout_calls: 1000.0
-  rollout_time: 1.3471428020857275
+  rollout_is_terminal_total_calls: 41865.0
+  rollout_is_terminal_total_time: 0.35782459436450154
+  rollout_legal_actions_total_calls: 40865.0
+  rollout_legal_actions_total_time: 0.45294440316502005
+  rollout_time: 1.432503998046741
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.017090499866753817
+  select_time: 0.01689219963736832
 Algorithm insights:
-  value: -0.4730
-  policy (top 5): (5, 7): 0.235, (2, 5): 0.199, (1, 3): 0.141, (1, 2): 0.136, (2, 7): 0.122
+  value: -0.6070
+  policy (top 4): (2, 1): 0.415, (1, 2): 0.240, (4, 1): 0.239, (3, 6): 0.106
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · · · · · · · ·
-1 · · · · · · · ·
-2 · · · ○ ● · ● ·
-3 · · · ○ ○ ● ○ ·
-4 · · · ● ● ○ ● ○
-5 · · · · ● ○ ● ●
-6 · · · · · ● ● ○
+0 ○ · · · · · · ·
+1 · ○ · ○ ● · · ·
+2 · ● ○ ○ ○ ○ · ·
+3 · · ● ○ ○ · · ·
+4 · · ○ ● ● · · ·
+5 · · · · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: WHITE | Legal moves: 12 | Score (B/W): 12/9
+Turn: WHITE | Legal moves: 13 | Score (B/W): 9/12
 
 === Move 18 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · · · · · · · ·
-1 · · · · · · · ·
-2 · · · ○ ● · ● ·
-3 · · · ○ ○ ● ○ ·
-4 · · · ● ● ○ ● ○
-5 · · · · ● ○ ● ●
-6 · · · · · ● ● ○
+0 ○ · · · · · · ·
+1 · ○ · ○ ● · · ·
+2 · ● ○ ○ ○ ○ · ·
+3 · · ● ○ ○ · · ·
+4 · · ○ ● ● · · ·
+5 · · · · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: WHITE | Legal moves: 12 | Score (B/W): 12/9
-Selected move: (3, 7)
-Search time: 0.000624s
+Turn: WHITE | Legal moves: 13 | Score (B/W): 9/12
+Selected move: (4, 5)
+Search time: 0.000727s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · · · · · · · ·
-1 · · · · · · · ·
-2 · · · ○ ● · ● ·
-3 · · · ○ ○ ● ○ ○
-4 · · · ● ● ○ ○ ○
-5 · · · · ● ○ ● ●
-6 · · · · · ● ● ○
+0 ○ · · · · · · ·
+1 · ○ · ○ ● · · ·
+2 · ● ○ ○ ○ ○ · ·
+3 · · ● ○ ○ · · ·
+4 · · ○ ○ ○ ○ · ·
+5 · · · · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: BLACK | Legal moves: 7 | Score (B/W): 11/11
+Turn: BLACK | Legal moves: 6 | Score (B/W): 7/15
 
 === Move 19 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · · · · · · · ·
-1 · · · · · · · ·
-2 · · · ○ ● · ● ·
-3 · · · ○ ○ ● ○ ○
-4 · · · ● ● ○ ○ ○
-5 · · · · ● ○ ● ●
-6 · · · · · ● ● ○
+0 ○ · · · · · · ·
+1 · ○ · ○ ● · · ·
+2 · ● ○ ○ ○ ○ · ·
+3 · · ● ○ ○ · · ·
+4 · · ○ ○ ○ ○ · ·
+5 · · · · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: BLACK | Legal moves: 7 | Score (B/W): 11/11
-Selected move: (2, 7)
-Search time: 1.376187s
-Nodes expanded this turn: 38573
+Turn: BLACK | Legal moves: 6 | Score (B/W): 7/15
+Selected move: (1, 2)
+Search time: 1.525129s
+Nodes expanded this turn: 38846
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.0015969981905072927
+  backup_time: 0.0016848990926519036
   expand_calls: 1000.0
-  expand_time: 0.017155498964712024
+  expand_time: 0.018167600850574672
+  rollout_apply_action_total_calls: 39206.0
+  rollout_apply_action_total_time: 0.5137475074734539
   rollout_calls: 1000.0
-  rollout_time: 1.3043990990845487
+  rollout_is_terminal_total_calls: 40206.0
+  rollout_is_terminal_total_time: 0.35969738848507404
+  rollout_legal_actions_total_calls: 39206.0
+  rollout_legal_actions_total_time: 0.45835209370125085
+  rollout_time: 1.4490280002355576
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.017245600349269807
+  select_time: 0.018404200673103333
 Algorithm insights:
-  value: -0.5980
-  policy (top 5): (2, 7): 0.445, (1, 3): 0.189, (4, 2): 0.127, (2, 2): 0.116, (3, 2): 0.048
+  value: -0.6950
+  policy (top 5): (1, 2): 0.332, (5, 2): 0.189, (3, 5): 0.168, (3, 6): 0.149, (0, 1): 0.088
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · · · · · · · ·
-1 · · · · · · · ·
-2 · · · ○ ● · ● ●
-3 · · · ○ ○ ● ● ●
-4 · · · ● ● ● ○ ●
-5 · · · · ● ○ ● ●
-6 · · · · · ● ● ○
+0 ○ · · · · · · ·
+1 · ○ ● ● ● · · ·
+2 · ● ● ● ○ ○ · ·
+3 · · ● ○ ● · · ·
+4 · · ○ ○ ○ ● · ·
+5 · · · · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: WHITE | Legal moves: 11 | Score (B/W): 16/7
+Turn: WHITE | Legal moves: 14 | Score (B/W): 13/10
 
 === Move 20 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · · · · · · · ·
-1 · · · · · · · ·
-2 · · · ○ ● · ● ●
-3 · · · ○ ○ ● ● ●
-4 · · · ● ● ● ○ ●
-5 · · · · ● ○ ● ●
-6 · · · · · ● ● ○
+0 ○ · · · · · · ·
+1 · ○ ● ● ● · · ·
+2 · ● ● ● ○ ○ · ·
+3 · · ● ○ ● · · ·
+4 · · ○ ○ ○ ● · ·
+5 · · · · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: WHITE | Legal moves: 11 | Score (B/W): 16/7
-Selected move: (1, 7)
-Search time: 0.000626s
+Turn: WHITE | Legal moves: 14 | Score (B/W): 13/10
+Selected move: (3, 5)
+Search time: 0.000589s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · · · · · · · ·
-1 · · · · · · · ○
-2 · · · ○ ● · ● ○
-3 · · · ○ ○ ● ● ○
-4 · · · ● ● ● ○ ○
-5 · · · · ● ○ ● ○
-6 · · · · · ● ● ○
+0 ○ · · · · · · ·
+1 · ○ ● ● ● · · ·
+2 · ● ● ● ○ ○ · ·
+3 · · ● ○ ○ ○ · ·
+4 · · ○ ○ ○ ○ · ·
+5 · · · · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: BLACK | Legal moves: 6 | Score (B/W): 12/12
+Turn: BLACK | Legal moves: 7 | Score (B/W): 11/13
 
 === Move 21 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · · · · · · · ·
-1 · · · · · · · ○
-2 · · · ○ ● · ● ○
-3 · · · ○ ○ ● ● ○
-4 · · · ● ● ● ○ ○
-5 · · · · ● ○ ● ○
-6 · · · · · ● ● ○
+0 ○ · · · · · · ·
+1 · ○ ● ● ● · · ·
+2 · ● ● ● ○ ○ · ·
+3 · · ● ○ ○ ○ · ·
+4 · · ○ ○ ○ ○ · ·
+5 · · · · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: BLACK | Legal moves: 6 | Score (B/W): 12/12
-Selected move: (1, 2)
-Search time: 1.270794s
-Nodes expanded this turn: 36546
+Turn: BLACK | Legal moves: 7 | Score (B/W): 11/13
+Selected move: (0, 1)
+Search time: 1.438259s
+Nodes expanded this turn: 36851
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.0016726019093766809
+  backup_time: 0.001704100868664682
   expand_calls: 1000.0
-  expand_time: 0.016794600407592952
+  expand_time: 0.01780079968739301
+  rollout_apply_action_total_calls: 37176.0
+  rollout_apply_action_total_time: 0.48597289517056197
   rollout_calls: 1000.0
-  rollout_time: 1.2028096984140575
+  rollout_is_terminal_total_calls: 38176.0
+  rollout_is_terminal_total_time: 0.3389918041648343
+  rollout_legal_actions_total_calls: 37176.0
+  rollout_legal_actions_total_time: 0.4309416903415695
+  rollout_time: 1.3674448971869424
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.016914398060180247
+  select_time: 0.017610501730814576
 Algorithm insights:
-  value: -0.8120
-  policy (top 5): (1, 2): 0.270, (1, 3): 0.211, (4, 2): 0.167, (2, 5): 0.144, (3, 2): 0.111
+  value: -0.6910
+  policy (top 5): (0, 1): 0.278, (5, 3): 0.160, (3, 6): 0.149, (2, 6): 0.147, (1, 0): 0.139
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · · · · · · · ·
-1 · · ● · · · · ○
-2 · · · ● ● · ● ○
-3 · · · ○ ● ● ● ○
-4 · · · ● ● ● ○ ○
-5 · · · · ● ○ ● ○
-6 · · · · · ● ● ○
+0 ○ ● · · · · · ·
+1 · ● ● ● ● · · ·
+2 · ● ● ● ○ ○ · ·
+3 · · ● ○ ○ ○ · ·
+4 · · ○ ○ ○ ○ · ·
+5 · · · · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: WHITE | Legal moves: 11 | Score (B/W): 15/10
+Turn: WHITE | Legal moves: 13 | Score (B/W): 13/12
 
 === Move 22 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · · · · · · · ·
-1 · · ● · · · · ○
-2 · · · ● ● · ● ○
-3 · · · ○ ● ● ● ○
-4 · · · ● ● ● ○ ○
-5 · · · · ● ○ ● ○
-6 · · · · · ● ● ○
+0 ○ ● · · · · · ·
+1 · ● ● ● ● · · ·
+2 · ● ● ● ○ ○ · ·
+3 · · ● ○ ○ ○ · ·
+4 · · ○ ○ ○ ○ · ·
+5 · · · · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: WHITE | Legal moves: 11 | Score (B/W): 15/10
-Selected move: (0, 1)
-Search time: 0.000551s
+Turn: WHITE | Legal moves: 13 | Score (B/W): 13/12
+Selected move: (0, 2)
+Search time: 0.000772s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · ○ · · · · · ·
-1 · · ○ · · · · ○
-2 · · · ○ ● · ● ○
-3 · · · ○ ○ ● ● ○
-4 · · · ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · · ● ● ○
+0 ○ ○ ○ · · · · ·
+1 · ● ○ ○ ● · · ·
+2 · ● ○ ● ○ ○ · ·
+3 · · ○ ○ ○ ○ · ·
+4 · · ○ ○ ○ ○ · ·
+5 · · · · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: BLACK | Legal moves: 5 | Score (B/W): 10/16
+Turn: BLACK | Legal moves: 5 | Score (B/W): 8/18
 
 === Move 23 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · ○ · · · · · ·
-1 · · ○ · · · · ○
-2 · · · ○ ● · ● ○
-3 · · · ○ ○ ● ● ○
-4 · · · ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · · ● ● ○
+0 ○ ○ ○ · · · · ·
+1 · ● ○ ○ ● · · ·
+2 · ● ○ ● ○ ○ · ·
+3 · · ○ ○ ○ ○ · ·
+4 · · ○ ○ ○ ○ · ·
+5 · · · · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: BLACK | Legal moves: 5 | Score (B/W): 10/16
-Selected move: (4, 2)
-Search time: 1.283230s
-Nodes expanded this turn: 34425
+Turn: BLACK | Legal moves: 5 | Score (B/W): 8/18
+Selected move: (0, 3)
+Search time: 1.309400s
+Nodes expanded this turn: 34659
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.0019049994880333543
+  backup_time: 0.0016220012912526727
   expand_calls: 1000.0
-  expand_time: 0.017837299848906696
+  expand_time: 0.017432799912057817
+  rollout_apply_action_total_calls: 35005.0
+  rollout_apply_action_total_time: 0.4407891909359023
   rollout_calls: 1000.0
-  rollout_time: 1.2024611997185275
+  rollout_is_terminal_total_calls: 36005.0
+  rollout_is_terminal_total_time: 0.3091547053772956
+  rollout_legal_actions_total_calls: 35005.0
+  rollout_legal_actions_total_time: 0.38744739117100835
+  rollout_time: 1.2377262013033032
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.019574699690565467
+  select_time: 0.017959499498829246
 Algorithm insights:
-  value: -0.7720
-  policy (top 5): (4, 2): 0.358, (3, 2): 0.202, (1, 3): 0.164, (2, 5): 0.147, (2, 2): 0.129
+  value: -0.7510
+  policy (top 5): (0, 3): 0.361, (5, 3): 0.239, (4, 1): 0.213, (3, 6): 0.156, (2, 6): 0.031
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · ○ · · · · · ·
-1 · · ○ · · · · ○
-2 · · · ○ ● · ● ○
-3 · · · ● ○ ● ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · · ● ● ○
+0 ○ ○ ○ ● · · · ·
+1 · ● ● ● ● · · ·
+2 · ● ○ ● ○ ○ · ·
+3 · · ○ ○ ○ ○ · ·
+4 · · ○ ○ ○ ○ · ·
+5 · · · · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: WHITE | Legal moves: 14 | Score (B/W): 12/15
+Turn: WHITE | Legal moves: 12 | Score (B/W): 11/16
 
 === Move 24 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · ○ · · · · · ·
-1 · · ○ · · · · ○
-2 · · · ○ ● · ● ○
-3 · · · ● ○ ● ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · · ● ● ○
+0 ○ ○ ○ ● · · · ·
+1 · ● ● ● ● · · ·
+2 · ● ○ ● ○ ○ · ·
+3 · · ○ ○ ○ ○ · ·
+4 · · ○ ○ ○ ○ · ·
+5 · · · · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: WHITE | Legal moves: 14 | Score (B/W): 12/15
-Selected move: (1, 3)
-Search time: 0.000809s
+Turn: WHITE | Legal moves: 12 | Score (B/W): 11/16
+Selected move: (0, 4)
+Search time: 0.000560s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · ○ · · · · · ·
-1 · · ○ ○ · · · ○
-2 · · · ○ ○ · ● ○
-3 · · · ● ○ ○ ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · · ● ● ○
+0 ○ ○ ○ ○ ○ · · ·
+1 · ● ● ○ ○ · · ·
+2 · ● ○ ● ○ ○ · ·
+3 · · ○ ○ ○ ○ · ·
+4 · · ○ ○ ○ ○ · ·
+5 · · · · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: BLACK | Legal moves: 4 | Score (B/W): 10/18
+Turn: BLACK | Legal moves: 7 | Score (B/W): 8/20
 
 === Move 25 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · ○ · · · · · ·
-1 · · ○ ○ · · · ○
-2 · · · ○ ○ · ● ○
-3 · · · ● ○ ○ ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · · ● ● ○
+0 ○ ○ ○ ○ ○ · · ·
+1 · ● ● ○ ○ · · ·
+2 · ● ○ ● ○ ○ · ·
+3 · · ○ ○ ○ ○ · ·
+4 · · ○ ○ ○ ○ · ·
+5 · · · · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: BLACK | Legal moves: 4 | Score (B/W): 10/18
-Selected move: (0, 3)
-Search time: 1.171275s
-Nodes expanded this turn: 32410
+Turn: BLACK | Legal moves: 7 | Score (B/W): 8/20
+Selected move: (4, 1)
+Search time: 1.298309s
+Nodes expanded this turn: 32823
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.0016812010435387492
+  backup_time: 0.0017135017551481724
   expand_calls: 1000.0
-  expand_time: 0.017597699421457946
+  expand_time: 0.018158301943913102
+  rollout_apply_action_total_calls: 33195.0
+  rollout_apply_action_total_time: 0.43673098378349096
   rollout_calls: 1000.0
-  rollout_time: 1.1002694985363632
+  rollout_is_terminal_total_calls: 34195.0
+  rollout_is_terminal_total_time: 0.3081149997888133
+  rollout_legal_actions_total_calls: 33195.0
+  rollout_legal_actions_total_time: 0.381594305858016
+  rollout_time: 1.2261689006118104
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.017648601671680808
+  select_time: 0.018559101386927068
 Algorithm insights:
-  value: -0.7500
-  policy (top 4): (0, 3): 0.359, (2, 5): 0.278, (1, 4): 0.262, (1, 5): 0.101
+  value: -0.8290
+  policy (top 5): (4, 1): 0.257, (0, 5): 0.197, (2, 6): 0.165, (3, 6): 0.114, (5, 2): 0.113
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · ○ · ● · · · ·
-1 · · ○ ● · · · ○
-2 · · · ● ○ · ● ○
-3 · · · ● ○ ○ ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · · ● ● ○
+0 ○ ○ ○ ○ ○ · · ·
+1 · ● ● ○ ○ · · ·
+2 · ● ○ ● ○ ○ · ·
+3 · · ● ○ ○ ○ · ·
+4 · ● ○ ○ ○ ○ · ·
+5 · · · · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: WHITE | Legal moves: 15 | Score (B/W): 13/16
+Turn: WHITE | Legal moves: 13 | Score (B/W): 10/19
 
 === Move 26 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · ○ · ● · · · ·
-1 · · ○ ● · · · ○
-2 · · · ● ○ · ● ○
-3 · · · ● ○ ○ ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · · ● ● ○
+0 ○ ○ ○ ○ ○ · · ·
+1 · ● ● ○ ○ · · ·
+2 · ● ○ ● ○ ○ · ·
+3 · · ● ○ ○ ○ · ·
+4 · ● ○ ○ ○ ○ · ·
+5 · · · · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: WHITE | Legal moves: 15 | Score (B/W): 13/16
-Selected move: (0, 2)
-Search time: 0.000717s
+Turn: WHITE | Legal moves: 13 | Score (B/W): 10/19
+Selected move: (5, 0)
+Search time: 0.000851s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ● · · · ·
-1 · · ○ ○ · · · ○
-2 · · · ● ○ · ● ○
-3 · · · ● ○ ○ ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · · ● ● ○
+0 ○ ○ ○ ○ ○ · · ·
+1 · ● ● ○ ○ · · ·
+2 · ● ○ ○ ○ ○ · ·
+3 · · ○ ○ ○ ○ · ·
+4 · ○ ○ ○ ○ ○ · ·
+5 ○ · · · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: BLACK | Legal moves: 5 | Score (B/W): 12/18
+Turn: BLACK | Legal moves: 4 | Score (B/W): 7/23
 
 === Move 27 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ● · · · ·
-1 · · ○ ○ · · · ○
-2 · · · ● ○ · ● ○
-3 · · · ● ○ ○ ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · · ● ● ○
+0 ○ ○ ○ ○ ○ · · ·
+1 · ● ● ○ ○ · · ·
+2 · ● ○ ○ ○ ○ · ·
+3 · · ○ ○ ○ ○ · ·
+4 · ○ ○ ○ ○ ○ · ·
+5 ○ · · · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: BLACK | Legal moves: 5 | Score (B/W): 12/18
-Selected move: (1, 4)
-Search time: 1.052472s
-Nodes expanded this turn: 30476
+Turn: BLACK | Legal moves: 4 | Score (B/W): 7/23
+Selected move: (3, 6)
+Search time: 1.203070s
+Nodes expanded this turn: 30544
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.0015635010786354542
+  backup_time: 0.00171840179245919
   expand_calls: 1000.0
-  expand_time: 0.01633280050009489
+  expand_time: 0.0178806995972991
+  rollout_apply_action_total_calls: 30925.0
+  rollout_apply_action_total_time: 0.4043006900465116
   rollout_calls: 1000.0
-  rollout_time: 0.9859589015832171
+  rollout_is_terminal_total_calls: 31925.0
+  rollout_is_terminal_total_time: 0.2841699068667367
+  rollout_legal_actions_total_calls: 30925.0
+  rollout_legal_actions_total_time: 0.34996580239385366
+  rollout_time: 1.1303110019071028
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.01625840098131448
+  select_time: 0.018680299865081906
 Algorithm insights:
-  value: -0.6670
-  policy (top 5): (1, 4): 0.303, (2, 5): 0.238, (0, 0): 0.186, (2, 1): 0.166, (1, 5): 0.107
+  value: -0.7770
+  policy (top 4): (3, 6): 0.306, (5, 2): 0.290, (1, 5): 0.247, (2, 6): 0.157
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ● · · · ·
-1 · · ○ ○ ● · · ○
-2 · · · ● ● · ● ○
-3 · · · ● ● ○ ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · · ● ● ○
+0 ○ ○ ○ ○ ○ · · ·
+1 · ● ● ○ ○ · · ·
+2 · ● ○ ○ ○ ○ · ·
+3 · · ○ ○ ○ ○ ● ·
+4 · ○ ○ ○ ○ ● · ·
+5 ○ · · · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: WHITE | Legal moves: 12 | Score (B/W): 15/16
+Turn: WHITE | Legal moves: 13 | Score (B/W): 9/22
 
 === Move 28 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ● · · · ·
-1 · · ○ ○ ● · · ○
-2 · · · ● ● · ● ○
-3 · · · ● ● ○ ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · · ● ● ○
+0 ○ ○ ○ ○ ○ · · ·
+1 · ● ● ○ ○ · · ·
+2 · ● ○ ○ ○ ○ · ·
+3 · · ○ ○ ○ ○ ● ·
+4 · ○ ○ ○ ○ ● · ·
+5 ○ · · · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: WHITE | Legal moves: 12 | Score (B/W): 15/16
-Selected move: (0, 4)
-Search time: 0.000608s
+Turn: WHITE | Legal moves: 13 | Score (B/W): 9/22
+Selected move: (4, 6)
+Search time: 0.000735s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · · ○ ○ ● · · ○
-2 · · · ● ● · ● ○
-3 · · · ● ● ○ ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · · ● ● ○
+0 ○ ○ ○ ○ ○ · · ·
+1 · ● ● ○ ○ · · ·
+2 · ● ○ ○ ○ ○ · ·
+3 · · ○ ○ ○ ○ ● ·
+4 · ○ ○ ○ ○ ○ ○ ·
+5 ○ · · · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: BLACK | Legal moves: 2 | Score (B/W): 14/18
+Turn: BLACK | Legal moves: 4 | Score (B/W): 8/24
 
 === Move 29 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · · ○ ○ ● · · ○
-2 · · · ● ● · ● ○
-3 · · · ● ● ○ ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · · ● ● ○
+0 ○ ○ ○ ○ ○ · · ·
+1 · ● ● ○ ○ · · ·
+2 · ● ○ ○ ○ ○ · ·
+3 · · ○ ○ ○ ○ ● ·
+4 · ○ ○ ○ ○ ○ ○ ·
+5 ○ · · · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: BLACK | Legal moves: 2 | Score (B/W): 14/18
-Selected move: (1, 1)
-Search time: 0.946923s
-Nodes expanded this turn: 27887
+Turn: BLACK | Legal moves: 4 | Score (B/W): 8/24
+Selected move: (5, 2)
+Search time: 1.149845s
+Nodes expanded this turn: 28628
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.0015930009540170431
+  backup_time: 0.0017432988388463855
   expand_calls: 1000.0
-  expand_time: 0.015832697972655296
+  expand_time: 0.017723600612953305
+  rollout_apply_action_total_calls: 29019.0
+  rollout_apply_action_total_time: 0.3831354941939935
   rollout_calls: 1000.0
-  rollout_time: 0.8789545987965539
+  rollout_is_terminal_total_calls: 30019.0
+  rollout_is_terminal_total_time: 0.2721527994144708
+  rollout_legal_actions_total_calls: 29019.0
+  rollout_legal_actions_total_time: 0.33114080619998276
+  rollout_time: 1.073438099003397
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.01575990137644112
+  select_time: 0.019705899874679744
 Algorithm insights:
-  value: -0.7840
-  policy (top 2): (1, 1): 0.635, (2, 5): 0.365
+  value: -0.7580
+  policy (top 4): (5, 2): 0.361, (3, 1): 0.328, (2, 6): 0.197, (1, 5): 0.114
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ● ● ● · · ○
-2 · · · ● ● · ● ○
-3 · · · ● ● ○ ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · · ● ● ○
+0 ○ ○ ○ ○ ○ · · ·
+1 · ● ● ○ ○ · · ·
+2 · ● ● ○ ○ ○ · ·
+3 · · ● ○ ○ ○ ● ·
+4 · ○ ● ○ ○ ○ ○ ·
+5 ○ · ● · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: WHITE | Legal moves: 13 | Score (B/W): 17/16
+Turn: WHITE | Legal moves: 18 | Score (B/W): 12/21
 
 === Move 30 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ● ● ● · · ○
-2 · · · ● ● · ● ○
-3 · · · ● ● ○ ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · · ● ● ○
+0 ○ ○ ○ ○ ○ · · ·
+1 · ● ● ○ ○ · · ·
+2 · ● ● ○ ○ ○ · ·
+3 · · ● ○ ○ ○ ● ·
+4 · ○ ● ○ ○ ○ ○ ·
+5 ○ · ● · ● ○ ● ·
+6 · · · · · · ● ·
 7 · · · · · · ● ○
-Turn: WHITE | Legal moves: 13 | Score (B/W): 17/16
-Selected move: (7, 4)
-Search time: 0.000656s
+Turn: WHITE | Legal moves: 18 | Score (B/W): 12/21
+Selected move: (6, 2)
+Search time: 0.000933s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ● ● ● · · ○
-2 · · · ● ● · ● ○
-3 · · · ● ● ○ ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · · ○ ● ○
-7 · · · · ○ · ● ○
-Turn: BLACK | Legal moves: 1 | Score (B/W): 16/18
+0 ○ ○ ○ ○ ○ · · ·
+1 · ● ○ ○ ○ · · ·
+2 · ● ○ ○ ○ ○ · ·
+3 · · ○ ○ ○ ○ ● ·
+4 · ○ ○ ○ ○ ○ ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · · ● ·
+7 · · · · · · ● ○
+Turn: BLACK | Legal moves: 3 | Score (B/W): 7/27
 
 === Move 31 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ● ● ● · · ○
-2 · · · ● ● · ● ○
-3 · · · ● ● ○ ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · · ○ ● ○
-7 · · · · ○ · ● ○
-Turn: BLACK | Legal moves: 1 | Score (B/W): 16/18
-Selected move: (6, 4)
-Search time: 0.878744s
-Nodes expanded this turn: 25548
+0 ○ ○ ○ ○ ○ · · ·
+1 · ● ○ ○ ○ · · ·
+2 · ● ○ ○ ○ ○ · ·
+3 · · ○ ○ ○ ○ ● ·
+4 · ○ ○ ○ ○ ○ ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · · ● ·
+7 · · · · · · ● ○
+Turn: BLACK | Legal moves: 3 | Score (B/W): 7/27
+Selected move: (3, 1)
+Search time: 1.005399s
+Nodes expanded this turn: 26533
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.0016210994217544794
+  backup_time: 0.001572199398651719
   expand_calls: 1000.0
-  expand_time: 0.015392701141536236
+  expand_time: 0.016825299826450646
+  rollout_apply_action_total_calls: 26906.0
+  rollout_apply_action_total_time: 0.33652919821906835
   rollout_calls: 1000.0
-  rollout_time: 0.814124398631975
+  rollout_is_terminal_total_calls: 27906.0
+  rollout_is_terminal_total_time: 0.23549339070450515
+  rollout_legal_actions_total_calls: 26906.0
+  rollout_legal_actions_total_time: 0.28918591083493084
+  rollout_time: 0.9370586997829378
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.01628379907924682
+  select_time: 0.01875459775328636
 Algorithm insights:
-  value: -0.8110
-  policy (top 1): (6, 4): 1.000
+  value: -0.7620
+  policy (top 3): (3, 1): 0.376, (2, 6): 0.335, (1, 5): 0.289
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ● ● ● · · ○
-2 · · · ● ● · ● ○
-3 · · · ● ● ○ ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · ● ● ● ○
-7 · · · · ○ · ● ○
-Turn: WHITE | Legal moves: 12 | Score (B/W): 18/17
+0 ○ ○ ○ ○ ○ · · ·
+1 · ● ○ ○ ○ · · ·
+2 · ● ○ ○ ○ ○ · ·
+3 · ● ● ● ● ● ● ·
+4 · ○ ○ ○ ○ ○ ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · · ● ·
+7 · · · · · · ● ○
+Turn: WHITE | Legal moves: 14 | Score (B/W): 12/23
 
 === Move 32 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ● ● ● · · ○
-2 · · · ● ● · ● ○
-3 · · · ● ● ○ ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · ● ● ● ○
-7 · · · · ○ · ● ○
-Turn: WHITE | Legal moves: 12 | Score (B/W): 18/17
-Selected move: (7, 5)
-Search time: 0.000654s
+0 ○ ○ ○ ○ ○ · · ·
+1 · ● ○ ○ ○ · · ·
+2 · ● ○ ○ ○ ○ · ·
+3 · ● ● ● ● ● ● ·
+4 · ○ ○ ○ ○ ○ ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · · ● ·
+7 · · · · · · ● ○
+Turn: WHITE | Legal moves: 14 | Score (B/W): 12/23
+Selected move: (3, 0)
+Search time: 0.000798s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ● ● ● · · ○
-2 · · · ● ● · ● ○
-3 · · · ● ● ○ ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · ● ○ ○ ○
-7 · · · · ○ ○ ○ ○
-Turn: BLACK | Legal moves: 0 | Score (B/W): 15/21
+0 ○ ○ ○ ○ ○ · · ·
+1 · ● ○ ○ ○ · · ·
+2 · ○ ○ ○ ○ ○ · ·
+3 ○ ● ● ● ● ● ● ·
+4 · ○ ○ ○ ○ ○ ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · · ● ·
+7 · · · · · · ● ○
+Turn: BLACK | Legal moves: 10 | Score (B/W): 11/25
 
 === Move 33 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ● ● ● · · ○
-2 · · · ● ● · ● ○
-3 · · · ● ● ○ ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · ● ○ ○ ○
-7 · · · · ○ ○ ○ ○
-Turn: BLACK | Legal moves: 0 | Score (B/W): 15/21
-Selected move: PASS
-Search time: 0.000027s
+0 ○ ○ ○ ○ ○ · · ·
+1 · ● ○ ○ ○ · · ·
+2 · ○ ○ ○ ○ ○ · ·
+3 ○ ● ● ● ● ● ● ·
+4 · ○ ○ ○ ○ ○ ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · · ● ·
+7 · · · · · · ● ○
+Turn: BLACK | Legal moves: 10 | Score (B/W): 11/25
+Selected move: (1, 0)
+Search time: 0.963693s
+Nodes expanded this turn: 25075
 Search stats:
-  backup_calls: 0.0
-  backup_time: 0.0
-  expand_calls: 0.0
-  expand_time: 0.0
-  rollout_calls: 0.0
-  rollout_time: 0.0
-  select_calls: 0.0
-  select_time: 0.0
+  backup_calls: 1000.0
+  backup_time: 0.0015433988301083446
+  expand_calls: 1000.0
+  expand_time: 0.016893000341951847
+  rollout_apply_action_total_calls: 25423.0
+  rollout_apply_action_total_time: 0.3220725958235562
+  rollout_calls: 1000.0
+  rollout_is_terminal_total_calls: 26423.0
+  rollout_is_terminal_total_time: 0.22567420278210193
+  rollout_legal_actions_total_calls: 25423.0
+  rollout_legal_actions_total_time: 0.2746980991214514
+  rollout_time: 0.8982141005108133
+  rollouts: 1000.0
+  select_calls: 1000.0
+  select_time: 0.01671799854375422
 Algorithm insights:
-  value: -1.0000
+  value: -0.7610
+  policy (top 5): (1, 0): 0.198, (1, 6): 0.144, (5, 7): 0.133, (6, 1): 0.112, (5, 3): 0.102
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ● ● ● · · ○
-2 · · · ● ● · ● ○
-3 · · · ● ● ○ ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · ● ○ ○ ○
-7 · · · · ○ ○ ○ ○
-Turn: WHITE | Legal moves: 11 | Score (B/W): 15/21
+0 ○ ○ ○ ○ ○ · · ·
+1 ● ● ○ ○ ○ · · ·
+2 · ● ○ ○ ○ ○ · ·
+3 ○ ● ● ● ● ● ● ·
+4 · ○ ○ ○ ○ ○ ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · · ● ·
+7 · · · · · · ● ○
+Turn: WHITE | Legal moves: 13 | Score (B/W): 13/24
 
 === Move 34 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ● ● ● · · ○
-2 · · · ● ● · ● ○
-3 · · · ● ● ○ ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · ● ○ ○ ○
-7 · · · · ○ ○ ○ ○
-Turn: WHITE | Legal moves: 11 | Score (B/W): 15/21
-Selected move: (7, 3)
-Search time: 0.000592s
+0 ○ ○ ○ ○ ○ · · ·
+1 ● ● ○ ○ ○ · · ·
+2 · ● ○ ○ ○ ○ · ·
+3 ○ ● ● ● ● ● ● ·
+4 · ○ ○ ○ ○ ○ ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · · ● ·
+7 · · · · · · ● ○
+Turn: WHITE | Legal moves: 13 | Score (B/W): 13/24
+Selected move: (3, 7)
+Search time: 0.000488s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ● ● ● · · ○
-2 · · · ● ● · ● ○
-3 · · · ● ● ○ ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 0 | Score (B/W): 14/23
+0 ○ ○ ○ ○ ○ · · ·
+1 ● ● ○ ○ ○ · · ·
+2 · ● ○ ○ ○ ○ · ·
+3 ○ ○ ○ ○ ○ ○ ○ ○
+4 · ○ ○ ○ ○ ○ ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · · ● ·
+7 · · · · · · ● ○
+Turn: BLACK | Legal moves: 4 | Score (B/W): 7/31
 
 === Move 35 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ● ● ● · · ○
-2 · · · ● ● · ● ○
-3 · · · ● ● ○ ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 0 | Score (B/W): 14/23
-Selected move: PASS
-Search time: 0.000024s
+0 ○ ○ ○ ○ ○ · · ·
+1 ● ● ○ ○ ○ · · ·
+2 · ● ○ ○ ○ ○ · ·
+3 ○ ○ ○ ○ ○ ○ ○ ○
+4 · ○ ○ ○ ○ ○ ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · · ● ·
+7 · · · · · · ● ○
+Turn: BLACK | Legal moves: 4 | Score (B/W): 7/31
+Selected move: (2, 7)
+Search time: 0.880590s
+Nodes expanded this turn: 22422
 Search stats:
-  backup_calls: 0.0
-  backup_time: 0.0
-  expand_calls: 0.0
-  expand_time: 0.0
-  rollout_calls: 0.0
-  rollout_time: 0.0
-  select_calls: 0.0
-  select_time: 0.0
+  backup_calls: 1000.0
+  backup_time: 0.0016548989806324244
+  expand_calls: 1000.0
+  expand_time: 0.017923499224707484
+  rollout_apply_action_total_calls: 22762.0
+  rollout_apply_action_total_time: 0.2946738015161827
+  rollout_calls: 1000.0
+  rollout_is_terminal_total_calls: 23762.0
+  rollout_is_terminal_total_time: 0.2079065963625908
+  rollout_legal_actions_total_calls: 22762.0
+  rollout_legal_actions_total_time: 0.24442730110604316
+  rollout_time: 0.8138572997413576
+  rollouts: 1000.0
+  select_calls: 1000.0
+  select_time: 0.016400301596149802
 Algorithm insights:
-  value: -1.0000
+  value: -0.8460
+  policy (top 4): (2, 7): 0.391, (5, 1): 0.282, (1, 5): 0.173, (2, 6): 0.154
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ● ● ● · · ○
-2 · · · ● ● · ● ○
-3 · · · ● ● ○ ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 10 | Score (B/W): 14/23
+0 ○ ○ ○ ○ ○ · · ·
+1 ● ● ○ ○ ○ · · ·
+2 · ● ○ ○ ○ ○ · ●
+3 ○ ○ ○ ○ ○ ○ ● ○
+4 · ○ ○ ○ ○ ● ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · · ● ·
+7 · · · · · · ● ○
+Turn: WHITE | Legal moves: 10 | Score (B/W): 10/29
 
 === Move 36 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ● ● ● · · ○
-2 · · · ● ● · ● ○
-3 · · · ● ● ○ ● ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 10 | Score (B/W): 14/23
-Selected move: (1, 6)
-Search time: 0.000515s
+0 ○ ○ ○ ○ ○ · · ·
+1 ● ● ○ ○ ○ · · ·
+2 · ● ○ ○ ○ ○ · ●
+3 ○ ○ ○ ○ ○ ○ ● ○
+4 · ○ ○ ○ ○ ● ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · · ● ·
+7 · · · · · · ● ○
+Turn: WHITE | Legal moves: 10 | Score (B/W): 10/29
+Selected move: (1, 7)
+Search time: 0.000644s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ● ● ● · ○ ○
-2 · · · ● ● · ○ ○
-3 · · · ● ● ○ ○ ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 0 | Score (B/W): 12/26
+0 ○ ○ ○ ○ ○ · · ·
+1 ● ● ○ ○ ○ · · ○
+2 · ● ○ ○ ○ ○ · ○
+3 ○ ○ ○ ○ ○ ○ ● ○
+4 · ○ ○ ○ ○ ● ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · · ● ·
+7 · · · · · · ● ○
+Turn: BLACK | Legal moves: 6 | Score (B/W): 9/31
 
 === Move 37 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ● ● ● · ○ ○
-2 · · · ● ● · ○ ○
-3 · · · ● ● ○ ○ ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 0 | Score (B/W): 12/26
-Selected move: PASS
-Search time: 0.000037s
+0 ○ ○ ○ ○ ○ · · ·
+1 ● ● ○ ○ ○ · · ○
+2 · ● ○ ○ ○ ○ · ○
+3 ○ ○ ○ ○ ○ ○ ● ○
+4 · ○ ○ ○ ○ ● ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · · ● ·
+7 · · · · · · ● ○
+Turn: BLACK | Legal moves: 6 | Score (B/W): 9/31
+Selected move: (6, 5)
+Search time: 0.813662s
+Nodes expanded this turn: 20522
 Search stats:
-  backup_calls: 0.0
-  backup_time: 0.0
-  expand_calls: 0.0
-  expand_time: 0.0
-  rollout_calls: 0.0
-  rollout_time: 0.0
-  select_calls: 0.0
-  select_time: 0.0
+  backup_calls: 1000.0
+  backup_time: 0.0016858010785654187
+  expand_calls: 1000.0
+  expand_time: 0.016991100856103003
+  rollout_apply_action_total_calls: 20924.0
+  rollout_apply_action_total_time: 0.2701854055048898
+  rollout_calls: 1000.0
+  rollout_is_terminal_total_calls: 21924.0
+  rollout_is_terminal_total_time: 0.19136010541114956
+  rollout_legal_actions_total_calls: 20924.0
+  rollout_legal_actions_total_time: 0.2225976858753711
+  rollout_time: 0.7452353013213724
+  rollouts: 1000.0
+  select_calls: 1000.0
+  select_time: 0.015741300769150257
 Algorithm insights:
-  value: -1.0000
+  value: -0.7420
+  policy (top 5): (6, 5): 0.263, (4, 7): 0.212, (4, 0): 0.189, (5, 1): 0.172, (2, 6): 0.106
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ● ● ● · ○ ○
-2 · · · ● ● · ○ ○
-3 · · · ● ● ○ ○ ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 8 | Score (B/W): 12/26
+0 ○ ○ ○ ○ ○ · · ·
+1 ● ● ○ ○ ○ · · ○
+2 · ● ○ ○ ○ ○ · ○
+3 ○ ○ ○ ○ ○ ○ ● ○
+4 · ○ ○ ○ ○ ● ○ ·
+5 ○ · ○ · ● ● ● ·
+6 · · ○ · · ● ● ·
+7 · · · · · · ● ○
+Turn: WHITE | Legal moves: 7 | Score (B/W): 11/30
 
 === Move 38 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ● ● ● · ○ ○
-2 · · · ● ● · ○ ○
-3 · · · ● ● ○ ○ ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ● ○ ○ ○
-6 · · · · ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 8 | Score (B/W): 12/26
-Selected move: (6, 3)
-Search time: 0.000581s
+0 ○ ○ ○ ○ ○ · · ·
+1 ● ● ○ ○ ○ · · ○
+2 · ● ○ ○ ○ ○ · ○
+3 ○ ○ ○ ○ ○ ○ ● ○
+4 · ○ ○ ○ ○ ● ○ ·
+5 ○ · ○ · ● ● ● ·
+6 · · ○ · · ● ● ·
+7 · · · · · · ● ○
+Turn: WHITE | Legal moves: 7 | Score (B/W): 11/30
+Selected move: (7, 5)
+Search time: 0.000389s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ● ● ● · ○ ○
-2 · · · ● ● · ○ ○
-3 · · · ● ● ○ ○ ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 0 | Score (B/W): 11/28
+0 ○ ○ ○ ○ ○ · · ·
+1 ● ● ○ ○ ○ · · ○
+2 · ● ○ ○ ○ ○ · ○
+3 ○ ○ ○ ○ ○ ○ ● ○
+4 · ○ ○ ○ ○ ○ ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · ○ ● ·
+7 · · · · · ○ ○ ○
+Turn: BLACK | Legal moves: 5 | Score (B/W): 7/35
 
 === Move 39 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ● ● ● · ○ ○
-2 · · · ● ● · ○ ○
-3 · · · ● ● ○ ○ ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 0 | Score (B/W): 11/28
-Selected move: PASS
-Search time: 0.000027s
+0 ○ ○ ○ ○ ○ · · ·
+1 ● ● ○ ○ ○ · · ○
+2 · ● ○ ○ ○ ○ · ○
+3 ○ ○ ○ ○ ○ ○ ● ○
+4 · ○ ○ ○ ○ ○ ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · ○ ● ·
+7 · · · · · ○ ○ ○
+Turn: BLACK | Legal moves: 5 | Score (B/W): 7/35
+Selected move: (2, 6)
+Search time: 0.720615s
+Nodes expanded this turn: 18336
 Search stats:
-  backup_calls: 0.0
-  backup_time: 0.0
-  expand_calls: 0.0
-  expand_time: 0.0
-  rollout_calls: 0.0
-  rollout_time: 0.0
-  select_calls: 0.0
-  select_time: 0.0
+  backup_calls: 1000.0
+  backup_time: 0.0016149975126609206
+  expand_calls: 1000.0
+  expand_time: 0.017183001269586384
+  rollout_apply_action_total_calls: 18768.0
+  rollout_apply_action_total_time: 0.23896279756445438
+  rollout_calls: 1000.0
+  rollout_is_terminal_total_calls: 19768.0
+  rollout_is_terminal_total_time: 0.16944809013511986
+  rollout_legal_actions_total_calls: 18768.0
+  rollout_legal_actions_total_time: 0.19293450482655317
+  rollout_time: 0.6546850018203259
+  rollouts: 1000.0
+  select_calls: 1000.0
+  select_time: 0.015402398072183132
 Algorithm insights:
-  value: -1.0000
+  value: -0.7620
+  policy (top 5): (2, 6): 0.254, (7, 4): 0.222, (6, 4): 0.217, (5, 1): 0.170, (1, 5): 0.137
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ● ● ● · ○ ○
-2 · · · ● ● · ○ ○
-3 · · · ● ● ○ ○ ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 7 | Score (B/W): 11/28
+0 ○ ○ ○ ○ ○ · · ·
+1 ● ● ○ ○ ○ · · ○
+2 · ● ● ● ● ● ● ○
+3 ○ ○ ○ ○ ○ ○ ● ○
+4 · ○ ○ ○ ○ ○ ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · ○ ● ·
+7 · · · · · ○ ○ ○
+Turn: WHITE | Legal moves: 9 | Score (B/W): 12/31
 
 === Move 40 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ● ● ● · ○ ○
-2 · · · ● ● · ○ ○
-3 · · · ● ● ○ ○ ○
-4 · · ● ● ● ○ ○ ○
-5 · · · · ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 7 | Score (B/W): 11/28
-Selected move: (2, 2)
-Search time: 0.000390s
+0 ○ ○ ○ ○ ○ · · ·
+1 ● ● ○ ○ ○ · · ○
+2 · ● ● ● ● ● ● ○
+3 ○ ○ ○ ○ ○ ○ ● ○
+4 · ○ ○ ○ ○ ○ ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · ○ ● ·
+7 · · · · · ○ ○ ○
+Turn: WHITE | Legal moves: 9 | Score (B/W): 12/31
+Selected move: (2, 0)
+Search time: 0.000458s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ○ ○ ● · ○ ○
-2 · · ○ ● ● · ○ ○
-3 · · · ○ ● ○ ○ ○
-4 · · ● ● ○ ○ ○ ○
-5 · · · · ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 2 | Score (B/W): 7/33
+0 ○ ○ ○ ○ ○ · · ·
+1 ○ ○ ○ ○ ○ · · ○
+2 ○ ○ ○ ○ ○ ○ ○ ○
+3 ○ ○ ○ ○ ○ ○ ● ○
+4 · ○ ○ ○ ○ ○ ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · ○ ● ·
+7 · · · · · ○ ○ ○
+Turn: BLACK | Legal moves: 3 | Score (B/W): 4/40
 
 === Move 41 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ○ ○ ● · ○ ○
-2 · · ○ ● ● · ○ ○
-3 · · · ○ ● ○ ○ ○
-4 · · ● ● ○ ○ ○ ○
-5 · · · · ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 2 | Score (B/W): 7/33
-Selected move: (2, 1)
-Search time: 0.708752s
-Nodes expanded this turn: 19608
+0 ○ ○ ○ ○ ○ · · ·
+1 ○ ○ ○ ○ ○ · · ○
+2 ○ ○ ○ ○ ○ ○ ○ ○
+3 ○ ○ ○ ○ ○ ○ ● ○
+4 · ○ ○ ○ ○ ○ ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · ○ ● ·
+7 · · · · · ○ ○ ○
+Turn: BLACK | Legal moves: 3 | Score (B/W): 4/40
+Selected move: (1, 6)
+Search time: 0.612004s
+Nodes expanded this turn: 15788
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.0016344008035957813
+  backup_time: 0.0016180985840037465
   expand_calls: 1000.0
-  expand_time: 0.01613020128570497
+  expand_time: 0.01612739870324731
+  rollout_apply_action_total_calls: 16363.0
+  rollout_apply_action_total_time: 0.20060770027339458
   rollout_calls: 1000.0
-  rollout_time: 0.6410091011784971
+  rollout_is_terminal_total_calls: 17363.0
+  rollout_is_terminal_total_time: 0.1450395837891847
+  rollout_legal_actions_total_calls: 16363.0
+  rollout_legal_actions_total_time: 0.15804351086262614
+  rollout_time: 0.5486017983639613
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.015486898832023144
+  select_time: 0.01525800081435591
 Algorithm insights:
-  value: -0.9270
-  policy (top 2): (2, 1): 0.522, (3, 2): 0.478
+  value: -0.9320
+  policy (top 3): (1, 6): 0.402, (6, 4): 0.318, (7, 4): 0.280
 Resulting state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ○ ○ ● · ○ ○
-2 · ● ● ● ● · ○ ○
-3 · · · ○ ● ○ ○ ○
-4 · · ● ● ○ ○ ○ ○
-5 · · · · ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 11 | Score (B/W): 9/32
+0 ○ ○ ○ ○ ○ · · ·
+1 ○ ○ ○ ○ ○ · ● ○
+2 ○ ○ ○ ○ ○ ○ ● ○
+3 ○ ○ ○ ○ ○ ○ ● ○
+4 · ○ ○ ○ ○ ○ ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · ○ ● ·
+7 · · · · · ○ ○ ○
+Turn: WHITE | Legal moves: 10 | Score (B/W): 6/39
 
 === Move 42 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 · ○ ○ ○ ○ · · ·
-1 · ● ○ ○ ● · ○ ○
-2 · ● ● ● ● · ○ ○
-3 · · · ○ ● ○ ○ ○
-4 · · ● ● ○ ○ ○ ○
-5 · · · · ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 11 | Score (B/W): 9/32
-Selected move: (0, 0)
-Search time: 0.000542s
+0 ○ ○ ○ ○ ○ · · ·
+1 ○ ○ ○ ○ ○ · ● ○
+2 ○ ○ ○ ○ ○ ○ ● ○
+3 ○ ○ ○ ○ ○ ○ ● ○
+4 · ○ ○ ○ ○ ○ ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · ○ ● ·
+7 · · · · · ○ ○ ○
+Turn: WHITE | Legal moves: 10 | Score (B/W): 6/39
+Selected move: (0, 7)
+Search time: 0.000566s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ · · ·
-1 · ○ ○ ○ ● · ○ ○
-2 · ● ○ ● ● · ○ ○
-3 · · · ○ ● ○ ○ ○
-4 · · ● ● ○ ○ ○ ○
-5 · · · · ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 2 | Score (B/W): 7/35
+0 ○ ○ ○ ○ ○ · · ○
+1 ○ ○ ○ ○ ○ · ○ ○
+2 ○ ○ ○ ○ ○ ○ ● ○
+3 ○ ○ ○ ○ ○ ○ ● ○
+4 · ○ ○ ○ ○ ○ ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · ○ ● ·
+7 · · · · · ○ ○ ○
+Turn: BLACK | Legal moves: 4 | Score (B/W): 5/41
 
 === Move 43 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ · · ·
-1 · ○ ○ ○ ● · ○ ○
-2 · ● ○ ● ● · ○ ○
-3 · · · ○ ● ○ ○ ○
-4 · · ● ● ○ ○ ○ ○
-5 · · · · ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 2 | Score (B/W): 7/35
-Selected move: (3, 2)
-Search time: 0.627492s
-Nodes expanded this turn: 17464
+0 ○ ○ ○ ○ ○ · · ○
+1 ○ ○ ○ ○ ○ · ○ ○
+2 ○ ○ ○ ○ ○ ○ ● ○
+3 ○ ○ ○ ○ ○ ○ ● ○
+4 · ○ ○ ○ ○ ○ ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · ○ ● ·
+7 · · · · · ○ ○ ○
+Turn: BLACK | Legal moves: 4 | Score (B/W): 5/41
+Selected move: (0, 6)
+Search time: 0.588141s
+Nodes expanded this turn: 14086
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.0018645006930455565
+  backup_time: 0.001667398726567626
   expand_calls: 1000.0
-  expand_time: 0.0157168994192034
+  expand_time: 0.017576700309291482
+  rollout_apply_action_total_calls: 14560.0
+  rollout_apply_action_total_time: 0.1904582028510049
   rollout_calls: 1000.0
-  rollout_time: 0.5638909997651353
+  rollout_is_terminal_total_calls: 15560.0
+  rollout_is_terminal_total_time: 0.13743359711952507
+  rollout_legal_actions_total_calls: 14560.0
+  rollout_legal_actions_total_time: 0.14935679582413286
+  rollout_time: 0.5204857978969812
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.01604800100903958
+  select_time: 0.013976801303215325
 Algorithm insights:
-  value: -1.0000
-  policy (top 2): (3, 2): 0.500, (1, 0): 0.500
+  value: -0.9950
+  policy (top 4): (0, 6): 0.261, (6, 4): 0.253, (7, 4): 0.243, (5, 3): 0.243
 Resulting state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ · · ·
-1 · ○ ○ ○ ● · ○ ○
-2 · ● ○ ● ● · ○ ○
-3 · · ● ● ● ○ ○ ○
-4 · · ● ● ○ ○ ○ ○
-5 · · · · ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 9 | Score (B/W): 9/34
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ · ● ○
+2 ○ ○ ○ ○ ○ ○ ● ○
+3 ○ ○ ○ ○ ○ ○ ● ○
+4 · ○ ○ ○ ○ ○ ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · ○ ● ·
+7 · · · · · ○ ○ ○
+Turn: WHITE | Legal moves: 8 | Score (B/W): 7/40
 
 === Move 44 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ · · ·
-1 · ○ ○ ○ ● · ○ ○
-2 · ● ○ ● ● · ○ ○
-3 · · ● ● ● ○ ○ ○
-4 · · ● ● ○ ○ ○ ○
-5 · · · · ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 9 | Score (B/W): 9/34
-Selected move: (2, 0)
-Search time: 0.000438s
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ · ● ○
+2 ○ ○ ○ ○ ○ ○ ● ○
+3 ○ ○ ○ ○ ○ ○ ● ○
+4 · ○ ○ ○ ○ ○ ○ ·
+5 ○ · ○ · ● ○ ● ·
+6 · · ○ · · ○ ● ·
+7 · · · · · ○ ○ ○
+Turn: WHITE | Legal moves: 8 | Score (B/W): 7/40
+Selected move: (4, 7)
+Search time: 0.000469s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ · · ·
-1 · ○ ○ ○ ● · ○ ○
-2 ○ ○ ○ ● ● · ○ ○
-3 · · ● ● ● ○ ○ ○
-4 · · ● ● ○ ○ ○ ○
-5 · · · · ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 1 | Score (B/W): 8/36
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ · ● ○
+2 ○ ○ ○ ○ ○ ○ ● ○
+3 ○ ○ ○ ○ ○ ○ ○ ○
+4 · ○ ○ ○ ○ ○ ○ ○
+5 ○ · ○ · ● ○ ○ ·
+6 · · ○ · · ○ ● ·
+7 · · · · · ○ ○ ○
+Turn: BLACK | Legal moves: 4 | Score (B/W): 5/43
 
 === Move 45 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ · · ·
-1 · ○ ○ ○ ● · ○ ○
-2 ○ ○ ○ ● ● · ○ ○
-3 · · ● ● ● ○ ○ ○
-4 · · ● ● ○ ○ ○ ○
-5 · · · · ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 1 | Score (B/W): 8/36
-Selected move: (1, 0)
-Search time: 0.576613s
-Nodes expanded this turn: 14875
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ · ● ○
+2 ○ ○ ○ ○ ○ ○ ● ○
+3 ○ ○ ○ ○ ○ ○ ○ ○
+4 · ○ ○ ○ ○ ○ ○ ○
+5 ○ · ○ · ● ○ ○ ·
+6 · · ○ · · ○ ● ·
+7 · · · · · ○ ○ ○
+Turn: BLACK | Legal moves: 4 | Score (B/W): 5/43
+Selected move: (6, 4)
+Search time: 0.497806s
+Nodes expanded this turn: 11913
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.0017173999221995473
+  backup_time: 0.001640300964936614
   expand_calls: 1000.0
-  expand_time: 0.016940101282671094
+  expand_time: 0.01656879927031696
+  rollout_apply_action_total_calls: 12365.0
+  rollout_apply_action_total_time: 0.158725596498698
   rollout_calls: 1000.0
-  rollout_time: 0.5121014995966107
+  rollout_is_terminal_total_calls: 13365.0
+  rollout_is_terminal_total_time: 0.11629900126717985
+  rollout_legal_actions_total_calls: 12365.0
+  rollout_legal_actions_total_time: 0.12297950079664588
+  rollout_time: 0.4347704026149586
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.015681299148127437
+  select_time: 0.014661198831163347
 Algorithm insights:
-  value: -1.0000
-  policy (top 1): (1, 0): 1.000
+  value: -0.9990
+  policy (top 4): (6, 4): 0.252, (6, 1): 0.252, (5, 7): 0.252, (5, 3): 0.244
 Resulting state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ · · ·
-1 ● ● ● ● ● · ○ ○
-2 ○ ● ○ ● ● · ○ ○
-3 · · ● ● ● ○ ○ ○
-4 · · ● ● ○ ○ ○ ○
-5 · · · · ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 6 | Score (B/W): 13/32
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ · ● ○
+2 ○ ○ ○ ○ ○ ○ ● ○
+3 ○ ○ ○ ○ ○ ○ ○ ○
+4 · ○ ○ ○ ○ ○ ○ ○
+5 ○ · ○ · ● ○ ○ ·
+6 · · ○ · ● ● ● ·
+7 · · · · · ○ ○ ○
+Turn: WHITE | Legal moves: 7 | Score (B/W): 7/42
 
 === Move 46 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ · · ·
-1 ● ● ● ● ● · ○ ○
-2 ○ ● ○ ● ● · ○ ○
-3 · · ● ● ● ○ ○ ○
-4 · · ● ● ○ ○ ○ ○
-5 · · · · ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 6 | Score (B/W): 13/32
-Selected move: (5, 3)
-Search time: 0.000436s
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ · ● ○
+2 ○ ○ ○ ○ ○ ○ ● ○
+3 ○ ○ ○ ○ ○ ○ ○ ○
+4 · ○ ○ ○ ○ ○ ○ ○
+5 ○ · ○ · ● ○ ○ ·
+6 · · ○ · ● ● ● ·
+7 · · · · · ○ ○ ○
+Turn: WHITE | Legal moves: 7 | Score (B/W): 7/42
+Selected move: (6, 3)
+Search time: 0.000480s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ · · ·
-1 ● ● ● ○ ● · ○ ○
-2 ○ ● ○ ○ ● · ○ ○
-3 · · ● ○ ● ○ ○ ○
-4 · · ● ○ ○ ○ ○ ○
-5 · · · ○ ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 2 | Score (B/W): 9/37
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ · ● ○
+2 ○ ○ ○ ○ ○ ○ ● ○
+3 ○ ○ ○ ○ ○ ○ ○ ○
+4 · ○ ○ ○ ○ ○ ○ ○
+5 ○ · ○ · ○ ○ ○ ·
+6 · · ○ ○ ● ● ● ·
+7 · · · · · ○ ○ ○
+Turn: BLACK | Legal moves: 3 | Score (B/W): 6/44
 
 === Move 47 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ · · ·
-1 ● ● ● ○ ● · ○ ○
-2 ○ ● ○ ○ ● · ○ ○
-3 · · ● ○ ● ○ ○ ○
-4 · · ● ○ ○ ○ ○ ○
-5 · · · ○ ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 2 | Score (B/W): 9/37
-Selected move: (5, 2)
-Search time: 0.522717s
-Nodes expanded this turn: 13272
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ · ● ○
+2 ○ ○ ○ ○ ○ ○ ● ○
+3 ○ ○ ○ ○ ○ ○ ○ ○
+4 · ○ ○ ○ ○ ○ ○ ○
+5 ○ · ○ · ○ ○ ○ ·
+6 · · ○ ○ ● ● ● ·
+7 · · · · · ○ ○ ○
+Turn: BLACK | Legal moves: 3 | Score (B/W): 6/44
+Selected move: (5, 3)
+Search time: 0.434001s
+Nodes expanded this turn: 9865
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.0017895009368658066
+  backup_time: 0.001641099457629025
   expand_calls: 1000.0
-  expand_time: 0.01657189743127674
+  expand_time: 0.01723860122729093
+  rollout_apply_action_total_calls: 10363.0
+  rollout_apply_action_total_time: 0.13283849647268653
   rollout_calls: 1000.0
-  rollout_time: 0.4542738012969494
+  rollout_is_terminal_total_calls: 11363.0
+  rollout_is_terminal_total_time: 0.09890160255599767
+  rollout_legal_actions_total_calls: 10363.0
+  rollout_legal_actions_total_time: 0.10302629740908742
+  rollout_time: 0.36701160157099366
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.016102699213661253
+  select_time: 0.015376299386844039
 Algorithm insights:
-  value: -1.0000
-  policy (top 2): (5, 2): 0.500, (3, 0): 0.500
+  value: -0.9970
+  policy (top 3): (5, 3): 0.344, (1, 5): 0.343, (6, 1): 0.313
 Resulting state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ · · ·
-1 ● ● ● ○ ● · ○ ○
-2 ○ ● ○ ○ ● · ○ ○
-3 · · ● ○ ● ○ ○ ○
-4 · · ● ● ○ ○ ○ ○
-5 · · ● ○ ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 8 | Score (B/W): 11/36
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ · ● ○
+2 ○ ○ ○ ○ ○ ○ ● ○
+3 ○ ○ ○ ○ ○ ● ○ ○
+4 · ○ ○ ○ ● ○ ○ ○
+5 ○ · ○ ● ○ ○ ○ ·
+6 · · ○ ○ ● ● ● ·
+7 · · · · · ○ ○ ○
+Turn: WHITE | Legal moves: 6 | Score (B/W): 9/42
 
 === Move 48 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ · · ·
-1 ● ● ● ○ ● · ○ ○
-2 ○ ● ○ ○ ● · ○ ○
-3 · · ● ○ ● ○ ○ ○
-4 · · ● ● ○ ○ ○ ○
-5 · · ● ○ ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 8 | Score (B/W): 11/36
-Selected move: (0, 5)
-Search time: 0.000527s
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ · ● ○
+2 ○ ○ ○ ○ ○ ○ ● ○
+3 ○ ○ ○ ○ ○ ● ○ ○
+4 · ○ ○ ○ ● ○ ○ ○
+5 ○ · ○ ● ○ ○ ○ ·
+6 · · ○ ○ ● ● ● ·
+7 · · · · · ○ ○ ○
+Turn: WHITE | Legal moves: 6 | Score (B/W): 9/42
+Selected move: (7, 3)
+Search time: 0.000388s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ · ·
-1 ● ● ● ○ ○ · ○ ○
-2 ○ ● ○ ○ ● · ○ ○
-3 · · ● ○ ● ○ ○ ○
-4 · · ● ● ○ ○ ○ ○
-5 · · ● ○ ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 2 | Score (B/W): 10/38
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ · ● ○
+2 ○ ○ ○ ○ ○ ○ ● ○
+3 ○ ○ ○ ○ ○ ● ○ ○
+4 · ○ ○ ○ ● ○ ○ ○
+5 ○ · ○ ● ○ ○ ○ ·
+6 · · ○ ○ ○ ● ● ·
+7 · · · ○ · ○ ○ ○
+Turn: BLACK | Legal moves: 7 | Score (B/W): 8/44
 
 === Move 49 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ · ·
-1 ● ● ● ○ ○ · ○ ○
-2 ○ ● ○ ○ ● · ○ ○
-3 · · ● ○ ● ○ ○ ○
-4 · · ● ● ○ ○ ○ ○
-5 · · ● ○ ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 2 | Score (B/W): 10/38
-Selected move: (3, 0)
-Search time: 0.436106s
-Nodes expanded this turn: 11218
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ · ● ○
+2 ○ ○ ○ ○ ○ ○ ● ○
+3 ○ ○ ○ ○ ○ ● ○ ○
+4 · ○ ○ ○ ● ○ ○ ○
+5 ○ · ○ ● ○ ○ ○ ·
+6 · · ○ ○ ○ ● ● ·
+7 · · · ○ · ○ ○ ○
+Turn: BLACK | Legal moves: 7 | Score (B/W): 8/44
+Selected move: (7, 1)
+Search time: 0.373956s
+Nodes expanded this turn: 8277
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.0015774979256093502
+  backup_time: 0.0015859991544857621
   expand_calls: 1000.0
-  expand_time: 0.01599279884248972
+  expand_time: 0.017134198686107993
+  rollout_apply_action_total_calls: 8759.0
+  rollout_apply_action_total_time: 0.11129719647578895
   rollout_calls: 1000.0
-  rollout_time: 0.37373799772467464
+  rollout_is_terminal_total_calls: 9759.0
+  rollout_is_terminal_total_time: 0.08392150735016912
+  rollout_legal_actions_total_calls: 8759.0
+  rollout_legal_actions_total_time: 0.08664989366661757
+  rollout_time: 0.3093087979359552
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.015588604961521924
+  select_time: 0.015954701113514602
 Algorithm insights:
-  value: -1.0000
-  policy (top 2): (3, 0): 0.500, (1, 5): 0.500
+  value: -0.9960
+  policy (top 5): (7, 1): 0.147, (5, 7): 0.147, (4, 0): 0.147, (1, 5): 0.146, (6, 1): 0.140
 Resulting state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ · ·
-1 ● ● ● ○ ○ · ○ ○
-2 ● ● ○ ○ ● · ○ ○
-3 ● · ● ○ ● ○ ○ ○
-4 · · ● ● ○ ○ ○ ○
-5 · · ● ○ ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 7 | Score (B/W): 12/37
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ · ● ○
+2 ○ ○ ○ ○ ○ ○ ● ○
+3 ○ ○ ○ ○ ○ ● ○ ○
+4 · ○ ○ ○ ● ○ ○ ○
+5 ○ · ○ ● ○ ○ ○ ·
+6 · · ● ○ ○ ● ● ·
+7 · ● · ○ · ○ ○ ○
+Turn: WHITE | Legal moves: 8 | Score (B/W): 10/43
 
 === Move 50 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ · ·
-1 ● ● ● ○ ○ · ○ ○
-2 ● ● ○ ○ ● · ○ ○
-3 ● · ● ○ ● ○ ○ ○
-4 · · ● ● ○ ○ ○ ○
-5 · · ● ○ ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 7 | Score (B/W): 12/37
-Selected move: (4, 0)
-Search time: 0.000449s
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ · ● ○
+2 ○ ○ ○ ○ ○ ○ ● ○
+3 ○ ○ ○ ○ ○ ● ○ ○
+4 · ○ ○ ○ ● ○ ○ ○
+5 ○ · ○ ● ○ ○ ○ ·
+6 · · ● ○ ○ ● ● ·
+7 · ● · ○ · ○ ○ ○
+Turn: WHITE | Legal moves: 8 | Score (B/W): 10/43
+Selected move: (7, 4)
+Search time: 0.000472s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ · ·
-1 ○ ● ● ○ ○ · ○ ○
-2 ○ ● ○ ○ ● · ○ ○
-3 ○ · ● ○ ● ○ ○ ○
-4 ○ · ● ● ○ ○ ○ ○
-5 · · ● ○ ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 1 | Score (B/W): 9/41
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ · ● ○
+2 ○ ○ ○ ○ ○ ○ ● ○
+3 ○ ○ ○ ○ ○ ● ○ ○
+4 · ○ ○ ○ ● ○ ○ ○
+5 ○ · ○ ● ○ ○ ○ ·
+6 · · ● ○ ○ ○ ● ·
+7 · ● · ○ ○ ○ ○ ○
+Turn: BLACK | Legal moves: 5 | Score (B/W): 9/45
 
 === Move 51 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ · ·
-1 ○ ● ● ○ ○ · ○ ○
-2 ○ ● ○ ○ ● · ○ ○
-3 ○ · ● ○ ● ○ ○ ○
-4 ○ · ● ● ○ ○ ○ ○
-5 · · ● ○ ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 1 | Score (B/W): 9/41
-Selected move: (1, 5)
-Search time: 0.365760s
-Nodes expanded this turn: 8260
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ · ● ○
+2 ○ ○ ○ ○ ○ ○ ● ○
+3 ○ ○ ○ ○ ○ ● ○ ○
+4 · ○ ○ ○ ● ○ ○ ○
+5 ○ · ○ ● ○ ○ ○ ·
+6 · · ● ○ ○ ○ ● ·
+7 · ● · ○ ○ ○ ○ ○
+Turn: BLACK | Legal moves: 5 | Score (B/W): 9/45
+Selected move: (6, 1)
+Search time: 0.283750s
+Nodes expanded this turn: 6053
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.0017136011738330126
+  backup_time: 0.0015568973030894995
   expand_calls: 1000.0
-  expand_time: 0.016194303170777857
+  expand_time: 0.016387098701670766
+  rollout_apply_action_total_calls: 6364.0
+  rollout_apply_action_total_time: 0.08104369754437357
   rollout_calls: 1000.0
-  rollout_time: 0.29892339662183076
+  rollout_is_terminal_total_calls: 7364.0
+  rollout_is_terminal_total_time: 0.0597026995383203
+  rollout_legal_actions_total_calls: 6364.0
+  rollout_legal_actions_total_time: 0.060849198373034596
+  rollout_time: 0.22285759774968028
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.016167100984603167
+  select_time: 0.014378199470229447
 Algorithm insights:
   value: -1.0000
-  policy (top 1): (1, 5): 1.000
+  policy (top 5): (6, 1): 0.200, (5, 7): 0.200, (5, 1): 0.200, (4, 0): 0.200, (1, 5): 0.200
 Resulting state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ · ·
-1 ○ ● ● ● ● ● ○ ○
-2 ○ ● ○ ○ ● · ○ ○
-3 ○ · ● ○ ● ○ ○ ○
-4 ○ · ● ● ○ ○ ○ ○
-5 · · ● ○ ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 6 | Score (B/W): 12/39
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ · ● ○
+2 ○ ○ ○ ○ ○ ● ● ○
+3 ○ ○ ○ ○ ● ● ○ ○
+4 · ○ ○ ● ● ○ ○ ○
+5 ○ · ● ● ○ ○ ○ ·
+6 · ● ● ○ ○ ○ ● ·
+7 · ● · ○ ○ ○ ○ ○
+Turn: WHITE | Legal moves: 8 | Score (B/W): 14/41
 
 === Move 52 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ · ·
-1 ○ ● ● ● ● ● ○ ○
-2 ○ ● ○ ○ ● · ○ ○
-3 ○ · ● ○ ● ○ ○ ○
-4 ○ · ● ● ○ ○ ○ ○
-5 · · ● ○ ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 6 | Score (B/W): 12/39
-Selected move: (0, 6)
-Search time: 0.000422s
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ · ● ○
+2 ○ ○ ○ ○ ○ ● ● ○
+3 ○ ○ ○ ○ ● ● ○ ○
+4 · ○ ○ ● ● ○ ○ ○
+5 ○ · ● ● ○ ○ ○ ·
+6 · ● ● ○ ○ ○ ● ·
+7 · ● · ○ ○ ○ ○ ○
+Turn: WHITE | Legal moves: 8 | Score (B/W): 14/41
+Selected move: (5, 1)
+Search time: 0.000463s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ ○ ·
-1 ○ ● ● ● ● ○ ○ ○
-2 ○ ● ○ ○ ○ · ○ ○
-3 ○ · ● ○ ● ○ ○ ○
-4 ○ · ● ● ○ ○ ○ ○
-5 · · ● ○ ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 2 | Score (B/W): 10/42
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ · ● ○
+2 ○ ○ ○ ○ ○ ● ● ○
+3 ○ ○ ○ ○ ● ● ○ ○
+4 · ○ ○ ● ● ○ ○ ○
+5 ○ ○ ○ ○ ○ ○ ○ ·
+6 · ● ○ ○ ○ ○ ● ·
+7 · ● · ○ ○ ○ ○ ○
+Turn: BLACK | Legal moves: 3 | Score (B/W): 11/45
 
 === Move 53 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ ○ ·
-1 ○ ● ● ● ● ○ ○ ○
-2 ○ ● ○ ○ ○ · ○ ○
-3 ○ · ● ○ ● ○ ○ ○
-4 ○ · ● ● ○ ○ ○ ○
-5 · · ● ○ ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 2 | Score (B/W): 10/42
-Selected move: (3, 1)
-Search time: 0.289395s
-Nodes expanded this turn: 6337
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ · ● ○
+2 ○ ○ ○ ○ ○ ● ● ○
+3 ○ ○ ○ ○ ● ● ○ ○
+4 · ○ ○ ● ● ○ ○ ○
+5 ○ ○ ○ ○ ○ ○ ○ ·
+6 · ● ○ ○ ○ ○ ● ·
+7 · ● · ○ ○ ○ ○ ○
+Turn: BLACK | Legal moves: 3 | Score (B/W): 11/45
+Selected move: (6, 7)
+Search time: 0.174270s
+Nodes expanded this turn: 3360
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.0016566984122619033
+  backup_time: 0.0014240002492442727
   expand_calls: 1000.0
-  expand_time: 0.0150722999824211
+  expand_time: 0.01503540063276887
+  rollout_apply_action_total_calls: 3667.0
+  rollout_apply_action_total_time: 0.04052810184657574
   rollout_calls: 1000.0
-  rollout_time: 0.22832110326271504
+  rollout_is_terminal_total_calls: 4667.0
+  rollout_is_terminal_total_time: 0.03239850467070937
+  rollout_legal_actions_total_calls: 3667.0
+  rollout_legal_actions_total_time: 0.030589395784772933
+  rollout_time: 0.11632370203733444
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.014896598760969937
+  select_time: 0.013988198363222182
 Algorithm insights:
   value: -1.0000
-  policy (top 2): (3, 1): 0.500, (2, 5): 0.500
+  policy (top 3): (6, 7): 0.334, (5, 7): 0.333, (4, 0): 0.333
 Resulting state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ ○ ·
-1 ○ ● ● ● ● ○ ○ ○
-2 ○ ● ● ○ ○ · ○ ○
-3 ○ ● ● ○ ● ○ ○ ○
-4 ○ · ● ● ○ ○ ○ ○
-5 · · ● ○ ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 4 | Score (B/W): 12/41
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ · ● ○
+2 ○ ○ ○ ○ ○ ● ● ○
+3 ○ ○ ○ ○ ● ● ○ ○
+4 · ○ ○ ● ● ● ○ ○
+5 ○ ○ ○ ○ ○ ○ ● ·
+6 · ● ○ ○ ○ ○ ● ●
+7 · ● · ○ ○ ○ ○ ○
+Turn: WHITE | Legal moves: 6 | Score (B/W): 14/43
 
 === Move 54 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ ○ ·
-1 ○ ● ● ● ● ○ ○ ○
-2 ○ ● ● ○ ○ · ○ ○
-3 ○ ● ● ○ ● ○ ○ ○
-4 ○ · ● ● ○ ○ ○ ○
-5 · · ● ○ ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 4 | Score (B/W): 12/41
-Selected move: (2, 5)
-Search time: 0.000261s
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ · ● ○
+2 ○ ○ ○ ○ ○ ● ● ○
+3 ○ ○ ○ ○ ● ● ○ ○
+4 · ○ ○ ● ● ● ○ ○
+5 ○ ○ ○ ○ ○ ○ ● ·
+6 · ● ○ ○ ○ ○ ● ●
+7 · ● · ○ ○ ○ ○ ○
+Turn: WHITE | Legal moves: 6 | Score (B/W): 14/43
+Selected move: (1, 5)
+Search time: 0.000350s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ ○ ·
-1 ○ ● ● ● ○ ○ ○ ○
-2 ○ ● ● ○ ○ ○ ○ ○
-3 ○ ● ● ○ ● ○ ○ ○
-4 ○ · ● ● ○ ○ ○ ○
-5 · · ● ○ ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 1 | Score (B/W): 11/43
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ ○ ○ ○
+2 ○ ○ ○ ○ ○ ○ ○ ○
+3 ○ ○ ○ ○ ● ○ ○ ○
+4 · ○ ○ ● ● ○ ○ ○
+5 ○ ○ ○ ○ ○ ○ ● ·
+6 · ● ○ ○ ○ ○ ● ●
+7 · ● · ○ ○ ○ ○ ○
+Turn: BLACK | Legal moves: 2 | Score (B/W): 9/49
 
 === Move 55 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ ○ ·
-1 ○ ● ● ● ○ ○ ○ ○
-2 ○ ● ● ○ ○ ○ ○ ○
-3 ○ ● ● ○ ● ○ ○ ○
-4 ○ · ● ● ○ ○ ○ ○
-5 · · ● ○ ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 1 | Score (B/W): 11/43
-Selected move: (0, 7)
-Search time: 0.146187s
-Nodes expanded this turn: 2195
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ ○ ○ ○
+2 ○ ○ ○ ○ ○ ○ ○ ○
+3 ○ ○ ○ ○ ● ○ ○ ○
+4 · ○ ○ ● ● ○ ○ ○
+5 ○ ○ ○ ○ ○ ○ ● ·
+6 · ● ○ ○ ○ ○ ● ●
+7 · ● · ○ ○ ○ ○ ○
+Turn: BLACK | Legal moves: 2 | Score (B/W): 9/49
+Selected move: (6, 0)
+Search time: 0.068793s
+Nodes expanded this turn: 508
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.0017165009630843997
+  backup_time: 0.0012648000847548246
   expand_calls: 1000.0
-  expand_time: 0.010883399285376072
+  expand_time: 0.00486509979236871
+  rollout_apply_action_total_calls: 672.0
+  rollout_apply_action_total_time: 0.006846499629318714
   rollout_calls: 1000.0
-  rollout_time: 0.09092129999771714
+  rollout_is_terminal_total_calls: 1672.0
+  rollout_is_terminal_total_time: 0.007943399017676711
+  rollout_legal_actions_total_calls: 672.0
+  rollout_legal_actions_total_time: 0.006061400868929923
+  rollout_time: 0.025739701697602868
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.01469369966071099
+  select_time: 0.011422698269598186
 Algorithm insights:
   value: -1.0000
-  policy (top 1): (0, 7): 1.000
+  policy (top 2): (6, 0): 0.500, (4, 0): 0.500
 Resulting state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ ○ ●
-1 ○ ● ● ● ○ ○ ● ○
-2 ○ ● ● ○ ○ ● ○ ○
-3 ○ ● ● ○ ● ○ ○ ○
-4 ○ · ● ● ○ ○ ○ ○
-5 · · ● ○ ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 3 | Score (B/W): 14/41
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ ● ○ ○
+2 ○ ○ ○ ○ ● ○ ○ ○
+3 ○ ○ ○ ● ● ○ ○ ○
+4 · ○ ● ● ● ○ ○ ○
+5 ○ ● ○ ○ ○ ○ ● ·
+6 ● ● ○ ○ ○ ○ ● ●
+7 · ● · ○ ○ ○ ○ ○
+Turn: WHITE | Legal moves: 5 | Score (B/W): 15/44
 
 === Move 56 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ ○ ●
-1 ○ ● ● ● ○ ○ ● ○
-2 ○ ● ● ○ ○ ● ○ ○
-3 ○ ● ● ○ ● ○ ○ ○
-4 ○ · ● ● ○ ○ ○ ○
-5 · · ● ○ ○ ○ ○ ○
-6 · · · ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 3 | Score (B/W): 14/41
-Selected move: (6, 2)
-Search time: 0.000228s
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ ● ○ ○
+2 ○ ○ ○ ○ ● ○ ○ ○
+3 ○ ○ ○ ● ● ○ ○ ○
+4 · ○ ● ● ● ○ ○ ○
+5 ○ ● ○ ○ ○ ○ ● ·
+6 ● ● ○ ○ ○ ○ ● ●
+7 · ● · ○ ○ ○ ○ ○
+Turn: WHITE | Legal moves: 5 | Score (B/W): 15/44
+Selected move: (4, 0)
+Search time: 0.000299s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ ○ ●
-1 ○ ● ○ ● ○ ○ ● ○
-2 ○ ● ○ ○ ○ ● ○ ○
-3 ○ ● ○ ○ ● ○ ○ ○
-4 ○ · ○ ● ○ ○ ○ ○
-5 · · ○ ○ ○ ○ ○ ○
-6 · · ○ ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 2 | Score (B/W): 9/47
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ ● ○ ○
+2 ○ ○ ○ ○ ● ○ ○ ○
+3 ○ ○ ○ ● ● ○ ○ ○
+4 ○ ○ ● ● ● ○ ○ ○
+5 ○ ○ ○ ○ ○ ○ ● ·
+6 ● ● ○ ○ ○ ○ ● ●
+7 · ● · ○ ○ ○ ○ ○
+Turn: BLACK | Legal moves: 2 | Score (B/W): 14/46
 
 === Move 57 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ ○ ●
-1 ○ ● ○ ● ○ ○ ● ○
-2 ○ ● ○ ○ ○ ● ○ ○
-3 ○ ● ○ ○ ● ○ ○ ○
-4 ○ · ○ ● ○ ○ ○ ○
-5 · · ○ ○ ○ ○ ○ ○
-6 · · ○ ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 2 | Score (B/W): 9/47
-Selected move: (6, 1)
-Search time: 0.099950s
-Nodes expanded this turn: 1370
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ ● ○ ○
+2 ○ ○ ○ ○ ● ○ ○ ○
+3 ○ ○ ○ ● ● ○ ○ ○
+4 ○ ○ ● ● ● ○ ○ ○
+5 ○ ○ ○ ○ ○ ○ ● ·
+6 ● ● ○ ○ ○ ○ ● ●
+7 · ● · ○ ○ ○ ○ ○
+Turn: BLACK | Legal moves: 2 | Score (B/W): 14/46
+Selected move: (7, 2)
+Search time: 0.059581s
+Nodes expanded this turn: 353
 Search stats:
   backup_calls: 1000.0
-  backup_time: 0.0012333998456597328
+  backup_time: 0.00107159826438874
   expand_calls: 1000.0
-  expand_time: 0.0043692991603165865
+  expand_time: 0.0006730990717187524
+  rollout_apply_action_total_calls: 685.0
+  rollout_apply_action_total_time: 0.005127499927766621
   rollout_calls: 1000.0
-  rollout_time: 0.05946660309564322
+  rollout_is_terminal_total_calls: 1685.0
+  rollout_is_terminal_total_time: 0.009320204379037023
+  rollout_legal_actions_total_calls: 685.0
+  rollout_legal_actions_total_time: 0.006177097093313932
+  rollout_time: 0.02806320320814848
+  rollouts: 1000.0
   select_calls: 1000.0
-  select_time: 0.00901260378304869
+  select_time: 0.005179104278795421
 Algorithm insights:
   value: -1.0000
-  policy (top 2): (6, 1): 0.500, (4, 1): 0.500
+  policy (top 2): (7, 2): 0.500, (5, 7): 0.500
 Resulting state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ ○ ●
-1 ○ ● ○ ● ○ ○ ● ○
-2 ○ ● ○ ○ ○ ● ○ ○
-3 ○ ● ○ ○ ● ○ ○ ○
-4 ○ · ○ ● ○ ○ ○ ○
-5 · · ● ○ ○ ○ ○ ○
-6 · ● ○ ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 3 | Score (B/W): 11/46
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ ● ○ ○
+2 ○ ○ ○ ○ ● ○ ○ ○
+3 ○ ○ ○ ● ● ○ ○ ○
+4 ○ ○ ● ● ● ○ ○ ○
+5 ○ ○ ● ○ ○ ○ ● ·
+6 ● ● ● ○ ○ ○ ● ●
+7 · ● ● ○ ○ ○ ○ ○
+Turn: WHITE | Legal moves: 3 | Score (B/W): 17/44
 
 === Move 58 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ ○ ●
-1 ○ ● ○ ● ○ ○ ● ○
-2 ○ ● ○ ○ ○ ● ○ ○
-3 ○ ● ○ ○ ● ○ ○ ○
-4 ○ · ○ ● ○ ○ ○ ○
-5 · · ● ○ ○ ○ ○ ○
-6 · ● ○ ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 3 | Score (B/W): 11/46
-Selected move: (4, 1)
-Search time: 0.000208s
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ ● ○ ○
+2 ○ ○ ○ ○ ● ○ ○ ○
+3 ○ ○ ○ ● ● ○ ○ ○
+4 ○ ○ ● ● ● ○ ○ ○
+5 ○ ○ ● ○ ○ ○ ● ·
+6 ● ● ● ○ ○ ○ ● ●
+7 · ● ● ○ ○ ○ ○ ○
+Turn: WHITE | Legal moves: 3 | Score (B/W): 17/44
+Selected move: (5, 7)
+Search time: 0.000200s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ ○ ●
-1 ○ ○ ○ ● ○ ○ ● ○
-2 ○ ○ ○ ○ ○ ● ○ ○
-3 ○ ○ ○ ○ ● ○ ○ ○
-4 ○ ○ ○ ● ○ ○ ○ ○
-5 · · ○ ○ ○ ○ ○ ○
-6 · ● ○ ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 0 | Score (B/W): 7/51
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ ● ○ ○
+2 ○ ○ ○ ○ ● ○ ○ ○
+3 ○ ○ ○ ● ● ○ ○ ○
+4 ○ ○ ● ● ● ○ ○ ○
+5 ○ ○ ● ○ ○ ○ ○ ○
+6 ● ● ● ○ ○ ○ ○ ○
+7 · ● ● ○ ○ ○ ○ ○
+Turn: BLACK | Legal moves: 0 | Score (B/W): 14/48
 
 === Move 59 | BLACK (MCTS) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ ○ ●
-1 ○ ○ ○ ● ○ ○ ● ○
-2 ○ ○ ○ ○ ○ ● ○ ○
-3 ○ ○ ○ ○ ● ○ ○ ○
-4 ○ ○ ○ ● ○ ○ ○ ○
-5 · · ○ ○ ○ ○ ○ ○
-6 · ● ○ ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 0 | Score (B/W): 7/51
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ ● ○ ○
+2 ○ ○ ○ ○ ● ○ ○ ○
+3 ○ ○ ○ ● ● ○ ○ ○
+4 ○ ○ ● ● ● ○ ○ ○
+5 ○ ○ ● ○ ○ ○ ○ ○
+6 ● ● ● ○ ○ ○ ○ ○
+7 · ● ● ○ ○ ○ ○ ○
+Turn: BLACK | Legal moves: 0 | Score (B/W): 14/48
 Selected move: PASS
-Search time: 0.000039s
+Search time: 0.000032s
 Search stats:
   backup_calls: 0.0
   backup_time: 0.0
   expand_calls: 0.0
   expand_time: 0.0
+  rollout_apply_action_total_calls: 0.0
+  rollout_apply_action_total_time: 0.0
   rollout_calls: 0.0
+  rollout_is_terminal_total_calls: 0.0
+  rollout_is_terminal_total_time: 0.0
+  rollout_legal_actions_total_calls: 0.0
+  rollout_legal_actions_total_time: 0.0
   rollout_time: 0.0
+  rollouts: 0.0
   select_calls: 0.0
   select_time: 0.0
 Algorithm insights:
   value: -1.0000
 Resulting state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ ○ ●
-1 ○ ○ ○ ● ○ ○ ● ○
-2 ○ ○ ○ ○ ○ ● ○ ○
-3 ○ ○ ○ ○ ● ○ ○ ○
-4 ○ ○ ○ ● ○ ○ ○ ○
-5 · · ○ ○ ○ ○ ○ ○
-6 · ● ○ ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 2 | Score (B/W): 7/51
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ ● ○ ○
+2 ○ ○ ○ ○ ● ○ ○ ○
+3 ○ ○ ○ ● ● ○ ○ ○
+4 ○ ○ ● ● ● ○ ○ ○
+5 ○ ○ ● ○ ○ ○ ○ ○
+6 ● ● ● ○ ○ ○ ○ ○
+7 · ● ● ○ ○ ○ ○ ○
+Turn: WHITE | Legal moves: 2 | Score (B/W): 14/48
 
 === Move 60 | WHITE (Reflex) ===
 Current state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ ○ ●
-1 ○ ○ ○ ● ○ ○ ● ○
-2 ○ ○ ○ ○ ○ ● ○ ○
-3 ○ ○ ○ ○ ● ○ ○ ○
-4 ○ ○ ○ ● ○ ○ ○ ○
-5 · · ○ ○ ○ ○ ○ ○
-6 · ● ○ ○ ○ ○ ○ ○
-7 · · · ○ ○ ○ ○ ○
-Turn: WHITE | Legal moves: 2 | Score (B/W): 7/51
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ ● ○ ○
+2 ○ ○ ○ ○ ● ○ ○ ○
+3 ○ ○ ○ ● ● ○ ○ ○
+4 ○ ○ ● ● ● ○ ○ ○
+5 ○ ○ ● ○ ○ ○ ○ ○
+6 ● ● ● ○ ○ ○ ○ ○
+7 · ● ● ○ ○ ○ ○ ○
+Turn: WHITE | Legal moves: 2 | Score (B/W): 14/48
 Selected move: (7, 0)
-Search time: 0.000147s
+Search time: 0.000131s
 Resulting state:
    0 1 2 3 4 5 6 7
-0 ○ ○ ○ ○ ○ ○ ○ ●
-1 ○ ○ ○ ● ○ ○ ● ○
-2 ○ ○ ○ ○ ○ ● ○ ○
-3 ○ ○ ○ ○ ● ○ ○ ○
-4 ○ ○ ○ ● ○ ○ ○ ○
-5 · · ○ ○ ○ ○ ○ ○
-6 · ○ ○ ○ ○ ○ ○ ○
-7 ○ · · ○ ○ ○ ○ ○
-Turn: BLACK | Legal moves: 0 | Score (B/W): 6/53
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ ● ○ ○
+2 ○ ○ ○ ○ ● ○ ○ ○
+3 ○ ○ ○ ● ○ ○ ○ ○
+4 ○ ○ ● ○ ● ○ ○ ○
+5 ○ ○ ○ ○ ○ ○ ○ ○
+6 ○ ○ ● ○ ○ ○ ○ ○
+7 ○ ○ ○ ○ ○ ○ ○ ○
+Turn: BLACK | Legal moves: 0 | Score (B/W): 7/56
+
+=== Move 61 | BLACK (MCTS) ===
+Current state:
+   0 1 2 3 4 5 6 7
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ ● ○ ○
+2 ○ ○ ○ ○ ● ○ ○ ○
+3 ○ ○ ○ ● ○ ○ ○ ○
+4 ○ ○ ● ○ ● ○ ○ ○
+5 ○ ○ ○ ○ ○ ○ ○ ○
+6 ○ ○ ● ○ ○ ○ ○ ○
+7 ○ ○ ○ ○ ○ ○ ○ ○
+Turn: BLACK | Legal moves: 0 | Score (B/W): 7/56
+Selected move: PASS
+Search time: 0.000025s
+Search stats:
+  backup_calls: 0.0
+  backup_time: 0.0
+  expand_calls: 0.0
+  expand_time: 0.0
+  rollout_apply_action_total_calls: 0.0
+  rollout_apply_action_total_time: 0.0
+  rollout_calls: 0.0
+  rollout_is_terminal_total_calls: 0.0
+  rollout_is_terminal_total_time: 0.0
+  rollout_legal_actions_total_calls: 0.0
+  rollout_legal_actions_total_time: 0.0
+  rollout_time: 0.0
+  rollouts: 0.0
+  select_calls: 0.0
+  select_time: 0.0
+Algorithm insights:
+  value: -1.0000
+Resulting state:
+   0 1 2 3 4 5 6 7
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ ● ○ ○
+2 ○ ○ ○ ○ ● ○ ○ ○
+3 ○ ○ ○ ● ○ ○ ○ ○
+4 ○ ○ ● ○ ● ○ ○ ○
+5 ○ ○ ○ ○ ○ ○ ○ ○
+6 ○ ○ ● ○ ○ ○ ○ ○
+7 ○ ○ ○ ○ ○ ○ ○ ○
+Turn: WHITE | Legal moves: 1 | Score (B/W): 7/56
+
+=== Move 62 | WHITE (Reflex) ===
+Current state:
+   0 1 2 3 4 5 6 7
+0 ○ ○ ○ ○ ○ · ● ○
+1 ○ ○ ○ ○ ○ ● ○ ○
+2 ○ ○ ○ ○ ● ○ ○ ○
+3 ○ ○ ○ ● ○ ○ ○ ○
+4 ○ ○ ● ○ ● ○ ○ ○
+5 ○ ○ ○ ○ ○ ○ ○ ○
+6 ○ ○ ● ○ ○ ○ ○ ○
+7 ○ ○ ○ ○ ○ ○ ○ ○
+Turn: WHITE | Legal moves: 1 | Score (B/W): 7/56
+Selected move: (0, 5)
+Search time: 0.000068s
+Resulting state:
+   0 1 2 3 4 5 6 7
+0 ○ ○ ○ ○ ○ ○ ○ ○
+1 ○ ○ ○ ○ ○ ○ ○ ○
+2 ○ ○ ○ ○ ● ○ ○ ○
+3 ○ ○ ○ ● ○ ○ ○ ○
+4 ○ ○ ● ○ ● ○ ○ ○
+5 ○ ○ ○ ○ ○ ○ ○ ○
+6 ○ ○ ● ○ ○ ○ ○ ○
+7 ○ ○ ○ ○ ○ ○ ○ ○
+Turn: BLACK | Legal moves: 0 | Score (B/W): 5/59
 === Tournament Summary ===
 Wins: {'MCTS': 0, 'Reflex': 1} | Draws: 0 | Games: 1
 Timing (s):
-  MCTS: total=26.5445, avg/move=0.884817
-  Reflex: total=0.0141, avg/move=0.000471
+  MCTS: total=31.7571, avg/move=1.024423
+  Reflex: total=0.0147, avg/move=0.000473
 Nodes expanded:
-  MCTS: 754172
+  MCTS: 817779
   Reflex: 0
-(.venv) PS D:\dream_project\Othello_Game\scripts>
