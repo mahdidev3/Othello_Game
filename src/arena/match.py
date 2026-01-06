@@ -40,7 +40,6 @@ def play_match(
 
     while not state.is_terminal():
         agent = agents[state.current_player]
-        ssssssssssssssss = state.current_player
         agent.clear_last_search_info()
         nodes_before = agent.info().nodes_expanded
         total_time_before = agent.info().timing.total_time

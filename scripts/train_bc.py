@@ -110,7 +110,7 @@ def main() -> None:
     print(
         f"Generating expert data from {args.games} games with {generator.expert_name}..."
     )
-    expert_data = generator.generate_games(args.games)
+    expert_data = generator.generate_games(args.games, args.verbose)
     for state, action in expert_data:
         replay_buffer.add(state, action)
     print(f"Collected {len(replay_buffer)} expert samples.")
