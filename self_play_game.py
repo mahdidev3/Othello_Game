@@ -1,9 +1,8 @@
 import numpy as np
-import torch
-from MCTS.othello_game import OthelloGame
-from network.utils import StateConverter
+from MCTS.monte_carlo import MonteCarloTreeSearch
+from MCTS.othello import OthelloGame
 from config.config_manager import ConfigManager
-from MCTS.mcts_baseline import MCTSBaseline  # Updated import
+from network.utils import StateConverter
 
 
 class SelfPlayGame:
@@ -16,7 +15,7 @@ class SelfPlayGame:
 
     def play(self, device="cpu"):
         game = OthelloGame()
-        mcts = MCTSBaseline(  # Changed to use MCTSBaseline
+        mcts = MonteCarloTreeSearch(
             iterations=self.config.get("mcts.iterations"),
             exploration_c=self.config.get("mcts.exploration_c"),
         )
@@ -25,7 +24,8 @@ class SelfPlayGame:
         while not game.is_terminal():
             state_tensor = StateConverter.state_to_tensor(game)
 
-            value, move_probs = mcts.search(game)
+            result = mcts.search(game)
+            value, move_probs = result.value, result.move_probabilities
 
             if move_probs is None or len(move_probs.items()) == 0:
                 break
@@ -34,7 +34,7 @@ class SelfPlayGame:
             for move, prob in move_probs.items():
                 pi[move] = prob
 
-            replay_data.append((state_tensor, pi, None, game._player))
+            replay_data.append((state_tensor, pi, None, game.current_player))
 
             if self.config.get("logging.verbose"):
                 print(("#" * 100))
@@ -42,11 +42,8 @@ class SelfPlayGame:
                 for m, p in move_probs.items():
                     print(f"  move {m}: {p:.3f}")
 
-            if len(move_probs.items()) == 0:
-                break
-
             move = max(move_probs, key=move_probs.get)
-            game = game.make_move(move)
+            game = game.apply_move(move)
 
         result = game.get_force_result()
         for i in range(len(replay_data)):
@@ -54,7 +51,7 @@ class SelfPlayGame:
             replay_data[i] = (
                 state,
                 pi,
-                result if player == game._player else -result,
+                result if player == game.current_player else -result,
             )
 
         if self.config.get("logging.verbose"):

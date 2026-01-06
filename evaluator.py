@@ -1,9 +1,7 @@
-import torch
-import numpy as np
-from typing import Dict, Any
-from MCTS.othello_game import OthelloGame
-from MCTS.mcts_baseline import MCTSBaseline
-from MCTS.mcts_model import MCTSModel
+from typing import Any, Dict
+
+from MCTS.monte_carlo import MonteCarloTreeSearch
+from MCTS.othello import OthelloGame
 from config.config_manager import ConfigManager
 from network.neural_policy_value import NeuralPolicyValue
 
@@ -58,14 +56,14 @@ class Evaluator:
                 baseline_player = OthelloGame.PLAYER_1
 
             # Create MCTS instances
-            nn = NeuralPolicyValue(self.model, "cuda")
-            baseline_mcts = MCTSBaseline(
+            nn = NeuralPolicyValue(self.model, self.device)
+            baseline_mcts = MonteCarloTreeSearch(
                 iterations=self.iterations, exploration_c=self.exploration_c
             )
 
             # Play the game
             while not game.is_terminal():
-                current_player = game._player
+                current_player = game.current_player
 
                 self._vprint("\n" + "=" * 40)
                 self._vprint(game)  # uses __str__()
@@ -115,7 +113,8 @@ class Evaluator:
                 else:
                     self._vprint("BASELINE (PURE MCTS) TURN")
 
-                    _, policy_legal = baseline_mcts.search(game)
+                    baseline_result = baseline_mcts.search(game)
+                    policy_legal = baseline_result.move_probabilities
 
                     if not policy_legal:
                         self._vprint("No legal moves available.")
@@ -129,7 +128,7 @@ class Evaluator:
 
                     self._vprint(f"Selected move: {move}\n")
 
-                game = game.make_move(move)
+                game = game.apply_move(move)
 
             # Determine result
             result = game.check_winner()
