@@ -1,9 +1,10 @@
 from typing import Any, Dict
 
-from MCTS.monte_carlo import MonteCarloTreeSearch
-from MCTS.othello import OthelloGame
-from config.config_manager import ConfigManager
-from network.neural_policy_value import NeuralPolicyValue
+from src.agents.mcts import MonteCarloTreeSearch
+from src.config.config_manager import ConfigManager
+from src.games.othello.rules import OthelloRules
+from src.games.othello.state import OthelloState
+from src.network.neural_policy_value import NeuralPolicyValue
 
 
 class Evaluator:
@@ -36,7 +37,7 @@ class Evaluator:
         ]
 
         for move, prob in sorted_moves:
-            print(f"  move={move:2d}  prob={prob:.4f}")
+            print(f"  move={move}  prob={prob:.4f}")
 
     def evaluate(self) -> Dict[str, Any]:
         """Evaluate model against baseline MCTS."""
@@ -45,15 +46,15 @@ class Evaluator:
         losses = 0
 
         for game_idx in range(self.num_eval_games):
-            game = OthelloGame()
+            game = OthelloState()
 
             # Determine which side the model plays
             if game_idx % 2 == 0:  # Even game: model plays black (PLAYER_1)
-                model_player = OthelloGame.PLAYER_1
-                baseline_player = OthelloGame.PLAYER_2
+                model_player = OthelloRules.PLAYER_BLACK
+                baseline_player = OthelloRules.PLAYER_WHITE
             else:  # Odd game: model plays white (PLAYER_2)
-                model_player = OthelloGame.PLAYER_2
-                baseline_player = OthelloGame.PLAYER_1
+                model_player = OthelloRules.PLAYER_WHITE
+                baseline_player = OthelloRules.PLAYER_BLACK
 
             # Create MCTS instances
             nn = NeuralPolicyValue(self.model, self.device)
@@ -72,7 +73,7 @@ class Evaluator:
                 if current_player == model_player:
                     self._vprint("MODEL (MCTS + NN) TURN")
 
-                    legals = game.legal_moves()
+                    legals = game.legal_actions()
                     if len(legals) == 0:
                         self._vprint("No legal moves. Passing.")
                         break
@@ -91,10 +92,10 @@ class Evaluator:
 
                     self._vprint("Top policy moves:")
                     for m, p in top_moves:
-                        r, c = divmod(m, 8)  # convert index -> board coords
+                        r, c = m
                         self._vprint(f"  ({r}, {c}) : {p:.3f}")
 
-                    r, c = divmod(move, 8)
+                    r, c = move
                     self._vprint(f"Chosen move: ({r}, {c})")
 
                     self._vprint(
@@ -128,10 +129,10 @@ class Evaluator:
 
                     self._vprint(f"Selected move: {move}\n")
 
-                game = game.apply_move(move)
+                game = game.apply_action(move)
 
             # Determine result
-            result = game.check_winner()
+            result = OthelloRules.winner(game.black, game.white)
 
             if result == model_player:
                 wins += 1
@@ -145,7 +146,7 @@ class Evaluator:
             self._vprint(game)
             self._vprint("#" * 50)
 
-            result = game.check_winner()
+            result = OthelloRules.winner(game.black, game.white)
 
             if result == model_player:
                 self._vprint("RESULT: MODEL WINS ✅")

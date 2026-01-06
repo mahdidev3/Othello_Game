@@ -1,8 +1,10 @@
 import os
+
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from config.config_manager import ConfigManager
+
+from src.config.config_manager import ConfigManager
 
 
 class Trainer:

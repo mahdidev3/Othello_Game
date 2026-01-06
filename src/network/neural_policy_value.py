@@ -1,6 +1,8 @@
 import numpy as np
 import torch
-from network.utils import StateConverter
+
+from src.games.othello.state import OthelloState
+from src.network.utils import StateConverter
 
 
 class NeuralPolicyValue:
@@ -9,11 +11,11 @@ class NeuralPolicyValue:
         self.device = device
         self.model.eval()
 
-    def evaluate_state(self, state, legal_moves):
+    def evaluate_state(self, state: OthelloState, legal_moves):
         """
         Args:
             state: game state object
-            legal_moves: list of legal move indices (0..63)
+            legal_moves: list of legal move coordinate tuples or None for pass
 
         Returns:
             move: selected move (int)
@@ -36,9 +38,14 @@ class NeuralPolicyValue:
         policy_probs = torch.softmax(policy_logits, dim=1).cpu().numpy()[0]
         value = value.item()
 
-        # 4. Mask illegal moves
+        # 4. Mask illegal moves (expecting (row, col) tuples)
         mask = np.zeros_like(policy_probs, dtype=np.float32)
-        mask[legal_moves] = 1.0
+        for move in legal_moves:
+            if move is None:
+                continue
+            row, col = move
+            idx = row * 8 + col
+            mask[idx] = 1.0
 
         policy_probs *= mask
 
@@ -50,7 +57,13 @@ class NeuralPolicyValue:
             policy_probs = mask / mask.sum()
 
         # 5. Extract legal policy
-        policy_legal = {move: policy_probs[move] for move in legal_moves}
+        policy_legal = {}
+        for move in legal_moves:
+            if move is None:
+                continue
+            row, col = move
+            idx = row * 8 + col
+            policy_legal[move] = policy_probs[idx]
 
         # 6. Choose move (deterministic for eval)
         move = max(policy_legal, key=policy_legal.get)

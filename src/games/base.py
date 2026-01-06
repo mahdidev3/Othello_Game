@@ -1,0 +1,34 @@
+from __future__ import annotations
+
+from typing import Dict, List, Optional, Protocol, Tuple, Union
+
+Action = Union[Tuple[int, int], None]
+
+
+class GameStateProtocol(Protocol):
+    """Protocol describing the required interface for all game states."""
+
+    @property
+    def current_player(self) -> int:
+        ...
+
+    def legal_actions(self) -> List[Action]:
+        ...
+
+    def apply_action(self, action: Action) -> "GameStateProtocol":
+        ...
+
+    def is_terminal(self) -> bool:
+        ...
+
+    def evaluate(self, player: int) -> float:
+        ...
+
+    def result(self) -> Dict[str, float]:
+        ...
+
+    def outcome(self, perspective: Optional[int] = None) -> float:
+        ...
+
+    def __str__(self) -> str:
+        ...

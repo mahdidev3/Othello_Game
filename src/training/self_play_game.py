@@ -1,8 +1,10 @@
 import numpy as np
-from MCTS.monte_carlo import MonteCarloTreeSearch
-from MCTS.othello import OthelloGame
-from config.config_manager import ConfigManager
-from network.utils import StateConverter
+
+from src.agents.mcts import MonteCarloTreeSearch
+from src.config.config_manager import ConfigManager
+from src.games.othello.rules import OthelloRules
+from src.games.othello.state import OthelloState
+from src.network.utils import StateConverter
 
 
 class SelfPlayGame:
@@ -14,7 +16,7 @@ class SelfPlayGame:
         return f"\033[{code}m{text}\033[0m"
 
     def play(self, device="cpu"):
-        game = OthelloGame()
+        game = OthelloState()
         mcts = MonteCarloTreeSearch(
             iterations=self.config.get("mcts.iterations"),
             exploration_c=self.config.get("mcts.exploration_c"),
@@ -27,12 +29,15 @@ class SelfPlayGame:
             result = mcts.search(game)
             value, move_probs = result.value, result.move_probabilities
 
-            if move_probs is None or len(move_probs.items()) == 0:
+            if not move_probs:
                 break
 
             pi = np.zeros(64, dtype=np.float32)
             for move, prob in move_probs.items():
-                pi[move] = prob
+                if move is None:
+                    continue
+                r, c = move
+                pi[r * 8 + c] = prob
 
             replay_data.append((state_tensor, pi, None, game.current_player))
 
@@ -43,9 +48,9 @@ class SelfPlayGame:
                     print(f"  move {m}: {p:.3f}")
 
             move = max(move_probs, key=move_probs.get)
-            game = game.apply_move(move)
+            game = game.apply_action(move)
 
-        result = game.get_force_result()
+        result = game.outcome(game.current_player)
         for i in range(len(replay_data)):
             state, pi, _, player = replay_data[i]
             replay_data[i] = (
@@ -78,10 +83,10 @@ class SelfPlayGame:
         print(("#" * 100))
         print(game)
 
-        winner = game.check_winner()
-        if winner == OthelloGame.PLAYER_1:
+        winner = OthelloRules.winner(game.black, game.white)
+        if winner == OthelloRules.PLAYER_BLACK:
             print("\nWinner: PLAYER_1")
-        elif winner == OthelloGame.PLAYER_2:
+        elif winner == OthelloRules.PLAYER_WHITE:
             print("\nWinner: PLAYER_2")
         else:
             print("\nGame ended in a draw")
