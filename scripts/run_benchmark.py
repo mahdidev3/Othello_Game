@@ -24,8 +24,10 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--games", type=int, default=2, help="Games per pairing.")
     parser.add_argument("--depth", type=int, default=3, help="Search depth.")
-    parser.add_argument("--iterations", type=int, default=400, help="MCTS iterations.")
-    parser.add_argument("--rollout-limit", type=int, default=150, help="MCTS rollout cap.")
+    parser.add_argument("--iterations", type=int, default=1000, help="MCTS iterations.")
+    parser.add_argument(
+        "--rollout-limit", type=int, default=150, help="MCTS rollout cap."
+    )
     parser.add_argument("--output", type=Path, help="Optional JSON output path.")
     return parser.parse_args()
 
