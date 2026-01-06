@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import List, Tuple
+from typing import List, Optional, Tuple
 
 from src.games.base import GameStateProtocol
 from src.games.othello.rules import BOARD_SIZE, OthelloRules
@@ -24,20 +24,33 @@ def piece_parity(state: GameStateProtocol, player: int) -> float:
     return diff / max(1, b + w)
 
 
-def mobility_heuristic(state: GameStateProtocol, player: int) -> float:
+def mobility_heuristic(
+    state: GameStateProtocol,
+    player: int,
+    mask_cache: Optional[dict[tuple[int, int], int]] = None,
+) -> float:
     player_bits, opp_bits = (
         (state.black, state.white)
         if player == OthelloRules.PLAYER_BLACK
         else (state.white, state.black)  # type: ignore[attr-defined]
     )
-    player_moves = OthelloRules.legal_moves_mask(player_bits, opp_bits).bit_count()
-    opp_moves = OthelloRules.legal_moves_mask(opp_bits, player_bits).bit_count()
+    player_moves = OthelloRules.legal_moves_mask(
+        player_bits, opp_bits, cache=mask_cache
+    ).bit_count()
+    opp_moves = OthelloRules.legal_moves_mask(
+        opp_bits, player_bits, cache=mask_cache
+    ).bit_count()
     total = max(1, player_moves + opp_moves)
     return (player_moves - opp_moves) / total
 
 
 def corner_heuristic(state: GameStateProtocol, player: int) -> float:
-    corners = (0, BOARD_SIZE - 1, BOARD_SIZE * (BOARD_SIZE - 1), BOARD_SIZE * BOARD_SIZE - 1)
+    corners = (
+        0,
+        BOARD_SIZE - 1,
+        BOARD_SIZE * (BOARD_SIZE - 1),
+        BOARD_SIZE * BOARD_SIZE - 1,
+    )
     weights = 25.0
     score = 0.0
     for idx in corners:
@@ -62,7 +75,11 @@ def positional_heuristic(state: GameStateProtocol, player: int) -> float:
     return score / 100.0
 
 
-def evaluate_state(state: GameStateProtocol, player: int) -> float:
+def evaluate_state(
+    state: GameStateProtocol,
+    player: int,
+    mask_cache: Optional[dict[tuple[int, int], int]] = None,
+) -> float:
     """Combine multiple heuristics into a single evaluation."""
 
     weights = {
@@ -73,7 +90,7 @@ def evaluate_state(state: GameStateProtocol, player: int) -> float:
     }
     return (
         weights["parity"] * piece_parity(state, player)
-        + weights["mobility"] * mobility_heuristic(state, player)
+        + weights["mobility"] * mobility_heuristic(state, player, mask_cache=mask_cache)
         + weights["corners"] * corner_heuristic(state, player)
         + weights["positional"] * positional_heuristic(state, player)
     )

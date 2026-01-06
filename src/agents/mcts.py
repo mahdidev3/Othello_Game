@@ -8,6 +8,8 @@ from typing import Dict, List, Optional
 
 from src.agents.base import Agent
 from src.games.base import Action, GameStateProtocol
+from src.games.othello import heuristics
+from src.games.othello.rules import OthelloRules
 from src.utils.timing import Timer
 
 
@@ -40,7 +42,7 @@ class MonteCarloTreeSearch(Agent):
         self,
         iterations: int = 400,
         exploration_c: float = 1.4,
-        rollout_limit: int = 150,
+        rollout_limit: int = 80,
         seed: int | None = None,
     ):
         super().__init__(name="MCTS", seed=seed)
@@ -173,6 +175,7 @@ class MonteCarloTreeSearch(Agent):
         start_player = state.current_player
         steps = 0
         passes = 0
+        mask_cache: dict[tuple[int, int], int] = {}
         local_counts = {
             "legal_actions": {"calls": 0, "time": 0.0},
             "apply_action": {"calls": 0, "time": 0.0},
@@ -180,15 +183,28 @@ class MonteCarloTreeSearch(Agent):
         }
 
         while True:
+            player_bits, opp_bits = (
+                (cur.black, cur.white)
+                if cur.current_player == OthelloRules.PLAYER_BLACK
+                else (cur.white, cur.black)  # type: ignore[attr-defined]
+            )
             t0 = time.perf_counter()
-            is_term = cur.is_terminal()
+            is_term = OthelloRules.is_terminal(
+                player_bits, opp_bits, cur.current_player, mask_cache=mask_cache
+            )
             elapsed = time.perf_counter() - t0
             local_counts["is_terminal"]["calls"] += 1
             local_counts["is_terminal"]["time"] += elapsed
             if is_term or steps >= self.rollout_limit:
+                if is_term:
+                    value = cur.outcome(perspective=start_player)
+                else:
+                    value = cur.evaluate(start_player)
                 break
             t0 = time.perf_counter()
-            moves = cur.legal_actions()
+            moves = OthelloRules.legal_actions(
+                player_bits, opp_bits, mask_cache=mask_cache
+            )
             elapsed = time.perf_counter() - t0
             local_counts["legal_actions"]["calls"] += 1
             local_counts["legal_actions"]["time"] += elapsed
@@ -200,11 +216,12 @@ class MonteCarloTreeSearch(Agent):
                 local_counts["apply_action"]["time"] += elapsed
                 passes += 1
                 if passes >= 2:
+                    value = cur.evaluate(start_player)
                     break
                 continue
 
             passes = 0
-            mv = self._biased_choice(moves)
+            mv = self._heuristic_policy(cur, moves, mask_cache)
             t0 = time.perf_counter()
             cur = cur.apply_action(mv)
             elapsed = time.perf_counter() - t0
@@ -218,14 +235,38 @@ class MonteCarloTreeSearch(Agent):
             self.rollout_call_totals[key]["calls"] += counts["calls"]
             self.rollout_call_totals[key]["time"] += counts["time"]
 
-        return cur.outcome(perspective=start_player)
+        return value
 
-    def _biased_choice(self, moves: List[Action]) -> Action:
+    def _heuristic_policy(
+        self,
+        state: GameStateProtocol,
+        moves: List[Action],
+        mask_cache: dict[tuple[int, int], int],
+    ) -> Action:
         corners = {(0, 0), (0, 7), (7, 0), (7, 7)}
-        for c in sorted(corners):
-            if c in moves:
-                return c
-        return self.random.choice(moves)
+        best_move = moves[0]
+        best_score = -1e18
+        player = state.current_player
+
+        for mv in moves:
+            if mv in corners:
+                return mv
+            row, col = mv
+            positional_weight = heuristics.PositionalWeights[row][col] / 100.0
+            child_state = state.apply_action(mv)
+            mobility = heuristics.mobility_heuristic(
+                child_state, player, mask_cache=mask_cache
+            )
+            eval_score = heuristics.evaluate_state(
+                child_state, player, mask_cache=mask_cache
+            )
+            edge_bonus = 0.6 if row in {0, 7} or col in {0, 7} else 0.0
+            score = eval_score + 0.4 * mobility + edge_bonus + 0.2 * positional_weight
+            if score > best_score:
+                best_score = score
+                best_move = mv
+
+        return best_move
 
     def _backup(self, node: SearchNode, value: float) -> None:
         v = value

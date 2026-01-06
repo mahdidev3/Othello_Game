@@ -80,7 +80,13 @@ class OthelloRules:
         return black, white, OthelloRules.PLAYER_BLACK
 
     @staticmethod
-    def legal_moves_mask(player_bits: int, opp_bits: int) -> int:
+    def legal_moves_mask(
+        player_bits: int, opp_bits: int, cache: Optional[dict[tuple[int, int], int]] = None
+    ) -> int:
+        key = (player_bits, opp_bits)
+        if cache is not None and key in cache:
+            return cache[key]
+
         empty = FULL ^ (player_bits | opp_bits)
         moves = 0
 
@@ -93,11 +99,18 @@ class OthelloRules:
             t |= sh(t) & opp_bits
             moves |= sh(t) & empty
 
-        return moves & FULL
+        moves &= FULL
+        if cache is not None:
+            cache[key] = moves
+        return moves
 
     @staticmethod
-    def legal_actions(player_bits: int, opp_bits: int) -> List[Action]:
-        mask = OthelloRules.legal_moves_mask(player_bits, opp_bits)
+    def legal_actions(
+        player_bits: int,
+        opp_bits: int,
+        mask_cache: Optional[dict[tuple[int, int], int]] = None,
+    ) -> List[Action]:
+        mask = OthelloRules.legal_moves_mask(player_bits, opp_bits, cache=mask_cache)
         actions: List[Action] = []
         bb = mask
         while bb:
@@ -148,16 +161,21 @@ class OthelloRules:
         return black, white, -player
 
     @staticmethod
-    def is_terminal(black: int, white: int, player: int) -> bool:
+    def is_terminal(
+        black: int,
+        white: int,
+        player: int,
+        mask_cache: Optional[dict[tuple[int, int], int]] = None,
+    ) -> bool:
         filled = black | white
         if filled == FULL:
             return True
         player_bits, opp_bits = (
             (black, white) if player == OthelloRules.PLAYER_BLACK else (white, black)
         )
-        if OthelloRules.legal_moves_mask(player_bits, opp_bits):
+        if OthelloRules.legal_moves_mask(player_bits, opp_bits, cache=mask_cache):
             return False
-        return OthelloRules.legal_moves_mask(opp_bits, player_bits) == 0
+        return OthelloRules.legal_moves_mask(opp_bits, player_bits, cache=mask_cache) == 0
 
     @staticmethod
     def score(black: int, white: int) -> Tuple[int, int]:

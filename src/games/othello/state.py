@@ -100,9 +100,9 @@ class OthelloState(GameStateProtocol):
                 idx = r * BOARD_SIZE + c
                 piece = board[idx]
                 if piece == OthelloRules.PLAYER_BLACK:
-                    symbol = color.colorize("●", fg="bright_white", bg="black")
+                    symbol = color.colorize("W", fg="bright_white")
                 elif piece == OthelloRules.PLAYER_WHITE:
-                    symbol = color.colorize("○", fg="black", bg="bright_white")
+                    symbol = color.colorize("B", fg="gray")
                 else:
                     symbol = color.colorize("·", fg="bright_black")
                 row_cells.append(symbol)

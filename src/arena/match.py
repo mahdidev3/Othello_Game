@@ -40,6 +40,7 @@ def play_match(
 
     while not state.is_terminal():
         agent = agents[state.current_player]
+        ssssssssssssssss = state.current_player
         agent.clear_last_search_info()
         nodes_before = agent.info().nodes_expanded
         total_time_before = agent.info().timing.total_time
@@ -50,27 +51,39 @@ def play_match(
         )
 
         if verbose:
-            print(color.colorize(f"\n=== Move {moves + 1} | {player_label} ({agent.name}) ===", fg="cyan"))
+            print(
+                color.colorize(
+                    f"\n=== Move {moves + 1} | {player_label} ({agent.name}) ===",
+                    fg="cyan",
+                )
+            )
             print(color.colorize("Current state:", fg="yellow"))
             print(state)
 
         start_time = time.perf_counter()
         action = agent.select_action(state)
         elapsed = time.perf_counter() - start_time
-
         state = state.apply_action(action)
         moves += 1
 
         if verbose:
             move_text = "PASS" if action is None else f"{action}"
             print(color.colorize(f"Selected move: {move_text}", fg="green"))
-            move_time = elapsed if elapsed >= 0 else agent.info().timing.total_time - total_time_before
+            move_time = (
+                elapsed
+                if elapsed >= 0
+                else agent.info().timing.total_time - total_time_before
+            )
             print(color.colorize(f"Search time: {move_time:.6f}s", fg="yellow"))
 
             nodes_after = agent.info().nodes_expanded
             node_delta = nodes_after - nodes_before
             if node_delta:
-                print(color.colorize(f"Nodes expanded this turn: {node_delta}", fg="magenta"))
+                print(
+                    color.colorize(
+                        f"Nodes expanded this turn: {node_delta}", fg="magenta"
+                    )
+                )
 
             extras = agent.info().extra
             if extras:
@@ -80,14 +93,32 @@ def play_match(
 
             search_info = agent.last_search_info()
             if search_info:
-                print(color.colorize("Algorithm insights:", fg="bright_white", bg="black"))
+                print(
+                    color.colorize("Algorithm insights:", fg="bright_white", bg="black")
+                )
                 if "value" in search_info:
-                    print(color.colorize(f"  value: {search_info['value']:.4f}", fg="bright_white", bg="black"))
+                    print(
+                        color.colorize(
+                            f"  value: {search_info['value']:.4f}",
+                            fg="bright_white",
+                            bg="black",
+                        )
+                    )
                 policy = search_info.get("policy")
                 if isinstance(policy, dict) and policy:
-                    top_policy = sorted(policy.items(), key=lambda item: item[1], reverse=True)[:5]
-                    policy_str = ", ".join(f"{mv}: {prob:.3f}" for mv, prob in top_policy)
-                    print(color.colorize(f"  policy (top {len(top_policy)}): {policy_str}", fg="bright_white", bg="black"))
+                    top_policy = sorted(
+                        policy.items(), key=lambda item: item[1], reverse=True
+                    )[:5]
+                    policy_str = ", ".join(
+                        f"{mv}: {prob:.3f}" for mv, prob in top_policy
+                    )
+                    print(
+                        color.colorize(
+                            f"  policy (top {len(top_policy)}): {policy_str}",
+                            fg="bright_white",
+                            bg="black",
+                        )
+                    )
 
             print(color.colorize("Resulting state:", fg="yellow"))
             print(state)

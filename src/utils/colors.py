@@ -28,6 +28,7 @@ class Colorizer:
         "white": "37",
         "bright_black": "90",
         "bright_white": "97",
+        "gray": "90",
     }
 
     BACKGROUND = {
