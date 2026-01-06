@@ -62,6 +62,9 @@ class MonteCarloTreeSearch(Agent):
         for name, data in self.search_overhead.items():
             self._info.extra[f"{name}_time"] = data["time"]
             self._info.extra[f"{name}_calls"] = float(data["calls"])
+        self.set_last_search_info(
+            {"policy": result.move_probabilities, "value": result.value}
+        )
 
         if not result.move_probabilities:
             return None

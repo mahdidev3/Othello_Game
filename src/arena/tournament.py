@@ -18,7 +18,9 @@ class TournamentResult:
     match_results: List[MatchResult] = field(default_factory=list)
 
 
-def run_tournament(agent_a: Agent, agent_b: Agent, games: int = 10) -> TournamentResult:
+def run_tournament(
+    agent_a: Agent, agent_b: Agent, games: int = 10, verbose: bool = False
+) -> TournamentResult:
     """Head-to-head tournament with color swapping."""
 
     wins = {agent_a.name: 0, agent_b.name: 0}
@@ -36,7 +38,7 @@ def run_tournament(agent_a: Agent, agent_b: Agent, games: int = 10) -> Tournamen
         else:
             black, white = agent_b, agent_a
 
-        result = play_match(black, white)
+        result = play_match(black, white, verbose=verbose)
         match_results.append(result)
 
         if result.winner == OthelloRules.PLAYER_BLACK:

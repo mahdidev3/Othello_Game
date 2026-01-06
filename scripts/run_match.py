@@ -21,6 +21,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--depth", type=int, default=3, help="Search depth for tree agents.")
     parser.add_argument("--iterations", type=int, default=400, help="Iterations for MCTS.")
     parser.add_argument("--rollout-limit", type=int, default=150, help="Rollout cap for MCTS.")
+    parser.add_argument(
+        "--verbose",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Enable colorful per-move logging (default: enabled).",
+    )
     return parser.parse_args()
 
 
@@ -39,7 +45,7 @@ def main() -> None:
         rollout_limit=args.rollout_limit,
     )
 
-    result = run_tournament(agent_a, agent_b, games=args.games)
+    result = run_tournament(agent_a, agent_b, games=args.games, verbose=args.verbose)
     print("=== Tournament Summary ===")
     print(f"Wins: {result.wins} | Draws: {result.draws} | Games: {result.games}")
     print("Timing (s):")

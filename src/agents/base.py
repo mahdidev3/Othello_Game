@@ -33,6 +33,7 @@ class Agent(ABC):
         if seed is not None:
             random.seed(seed)
         self._info = AgentInfo()
+        self._last_search_info: Dict[str, object] = {}
 
     @abstractmethod
     def select_action(self, state: GameStateProtocol) -> Action:
@@ -42,7 +43,20 @@ class Agent(ABC):
     def reset(self) -> None:
         """Hook for resetting agent state between games."""
         self._info = AgentInfo()
+        self._last_search_info = {}
 
     def info(self) -> AgentInfo:
         """Return metrics collected so far."""
         return self._info
+
+    def set_last_search_info(self, data: Dict[str, object]) -> None:
+        """Store debugging data from the most recent search step."""
+        self._last_search_info = data
+
+    def last_search_info(self) -> Dict[str, object]:
+        """Retrieve debug data for verbose match output."""
+        return getattr(self, "_last_search_info", {})
+
+    def clear_last_search_info(self) -> None:
+        """Reset any stored debug data."""
+        self._last_search_info = {}
