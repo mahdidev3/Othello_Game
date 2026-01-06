@@ -202,6 +202,4 @@ class MonteCarloTreeSearch(Agent):
         total_visits = sum(child.visits for child in root.children.values())
         if total_visits <= 0:
             return {}
-        return {
-            mv: child.visits / total_visits for mv, child in root.children.items()
-        }
+        return {mv: child.visits / total_visits for mv, child in root.children.items()}

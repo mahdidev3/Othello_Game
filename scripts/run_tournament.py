@@ -14,7 +14,9 @@ from src.arena.benchmark import run_benchmark_suite  # noqa: E402
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Round-robin tournament for multiple agents.")
+    parser = argparse.ArgumentParser(
+        description="Round-robin tournament for multiple agents."
+    )
     parser.add_argument(
         "--agents",
         nargs="+",
@@ -22,9 +24,15 @@ def parse_args() -> argparse.Namespace:
         help="List of agent names (e.g., reflex minimax alphabeta mcts).",
     )
     parser.add_argument("--games", type=int, default=2, help="Games per pairing.")
-    parser.add_argument("--depth", type=int, default=3, help="Search depth for tree agents.")
-    parser.add_argument("--iterations", type=int, default=400, help="Iterations for MCTS.")
-    parser.add_argument("--rollout-limit", type=int, default=150, help="Rollout cap for MCTS.")
+    parser.add_argument(
+        "--depth", type=int, default=3, help="Search depth for tree agents."
+    )
+    parser.add_argument(
+        "--iterations", type=int, default=400, help="Iterations for MCTS."
+    )
+    parser.add_argument(
+        "--rollout-limit", type=int, default=150, help="Rollout cap for MCTS."
+    )
     return parser.parse_args()
 
 

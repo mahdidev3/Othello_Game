@@ -18,9 +18,15 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--agent1", required=True, help="First agent name.")
     parser.add_argument("--agent2", required=True, help="Second agent name.")
     parser.add_argument("--games", type=int, default=2, help="Number of games to play.")
-    parser.add_argument("--depth", type=int, default=3, help="Search depth for tree agents.")
-    parser.add_argument("--iterations", type=int, default=400, help="Iterations for MCTS.")
-    parser.add_argument("--rollout-limit", type=int, default=150, help="Rollout cap for MCTS.")
+    parser.add_argument(
+        "--depth", type=int, default=3, help="Search depth for tree agents."
+    )
+    parser.add_argument(
+        "--iterations", type=int, default=400, help="Iterations for MCTS."
+    )
+    parser.add_argument(
+        "--rollout-limit", type=int, default=150, help="Rollout cap for MCTS."
+    )
     parser.add_argument(
         "--verbose",
         action=argparse.BooleanOptionalAction,
@@ -50,7 +56,9 @@ def main() -> None:
     print(f"Wins: {result.wins} | Draws: {result.draws} | Games: {result.games}")
     print("Timing (s):")
     for name, data in result.timing.items():
-        print(f"  {name}: total={data['total_time']:.4f}, avg/move={data['avg_time']:.6f}")
+        print(
+            f"  {name}: total={data['total_time']:.4f}, avg/move={data['avg_time']:.6f}"
+        )
     print("Nodes expanded:")
     for name, count in result.nodes.items():
         print(f"  {name}: {count}")

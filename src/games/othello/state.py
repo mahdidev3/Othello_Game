@@ -110,9 +110,7 @@ class OthelloState(GameStateProtocol):
 
         legals = self.legal_actions()
         black_score, white_score = OthelloRules.score(self.black, self.white)
-        turn = (
-            "BLACK" if self._player == OthelloRules.PLAYER_BLACK else "WHITE"
-        )
+        turn = "BLACK" if self._player == OthelloRules.PLAYER_BLACK else "WHITE"
         info = (
             f"Turn: {turn} | Legal moves: {len(legals)} | "
             f"Score (B/W): {black_score}/{white_score}"
