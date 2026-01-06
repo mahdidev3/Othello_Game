@@ -1,8 +1,8 @@
 import os
 
 import torch
-import torch.nn as nn
 import torch.optim as optim
+from torch import nn
 
 from src.config.config_manager import ConfigManager
 
@@ -19,7 +19,7 @@ class Trainer:
             weight_decay=config.get("training.weight_decay"),
         )
 
-        self.value_loss_fn = nn.MSELoss()
+        self.policy_loss_fn = nn.CrossEntropyLoss()
         self.step = 0
         self.best_win_rate = 0.0
 
@@ -31,17 +31,15 @@ class Trainer:
         os.makedirs(self.checkpoint_dir, exist_ok=True)
 
     def train_step(self, batch):
-        states, policies, values = zip(*batch)
+        states, actions = zip(*batch)
 
         states = torch.tensor(states, dtype=torch.float32).to(self.device)
-        policies = torch.tensor(policies, dtype=torch.float32).to(self.device)
-        values = torch.tensor(values, dtype=torch.float32).to(self.device)
+        actions = torch.tensor(actions, dtype=torch.long).to(self.device)
 
-        pred_policy, pred_value = self.model(states)
+        logits = self.model(states)
 
-        policy_loss = -torch.mean(torch.sum(policies * pred_policy, dim=1))
-        value_loss = self.value_loss_fn(pred_value.squeeze(-1), values)
-        total_loss = policy_loss + value_loss
+        policy_loss = self.policy_loss_fn(logits, actions)
+        total_loss = policy_loss
 
         self.optimizer.zero_grad()
         total_loss.backward()
@@ -61,7 +59,6 @@ class Trainer:
         return {
             "total": total_loss.item(),
             "policy": policy_loss.item(),
-            "value": value_loss.item(),
         }
 
     def save_checkpoint(self, filename, win_rate=0.0):

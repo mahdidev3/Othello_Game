@@ -21,7 +21,6 @@ class NeuralPolicyValue:
             move: selected move (int)
             policy_legal: dict {move: prob}
             policy_full: np.ndarray shape (64,)
-            value: float in [-1, 1]
         """
 
         # 1. Convert state -> tensor
@@ -32,11 +31,11 @@ class NeuralPolicyValue:
 
         # 2. Forward pass
         with torch.no_grad():
-            policy_logits, value = self.model(state_tensor)
+            policy_logits = self.model(state_tensor)
 
         # 3. Policy processing
         policy_probs = torch.softmax(policy_logits, dim=1).cpu().numpy()[0]
-        value = value.item()
+        board_size = int(len(policy_probs) ** 0.5)
 
         # 4. Mask illegal moves (expecting (row, col) tuples)
         mask = np.zeros_like(policy_probs, dtype=np.float32)
@@ -44,7 +43,7 @@ class NeuralPolicyValue:
             if move is None:
                 continue
             row, col = move
-            idx = row * 8 + col
+            idx = row * board_size + col
             mask[idx] = 1.0
 
         policy_probs *= mask
@@ -62,10 +61,10 @@ class NeuralPolicyValue:
             if move is None:
                 continue
             row, col = move
-            idx = row * 8 + col
+            idx = row * board_size + col
             policy_legal[move] = policy_probs[idx]
 
         # 6. Choose move (deterministic for eval)
         move = max(policy_legal, key=policy_legal.get)
 
-        return move, policy_legal, policy_probs, value
+        return move, policy_legal, policy_probs

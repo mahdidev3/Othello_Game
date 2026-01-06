@@ -7,11 +7,12 @@ class ReplayBuffer:
     def __init__(self, capacity=100_000):
         self.buffer = deque(maxlen=capacity)
 
-    def add(self, state, policy, value):
-        self.buffer.append((state, policy, value))
+    def add(self, state, action):
+        self.buffer.append((state, action))
 
     def sample(self, batch_size):
-        return random.sample(self.buffer, batch_size)
+        k = min(batch_size, len(self.buffer))
+        return random.sample(self.buffer, k)
 
     def __len__(self):
         return len(self.buffer)

@@ -36,9 +36,7 @@ class OthelloState(GameStateProtocol):
 
     def legal_actions(self) -> List[Action]:
         player_bits, opp_bits = self._player_bits()
-        actions = OthelloRules.legal_actions(
-            player_bits, opp_bits, include_pass=True
-        )
+        actions = OthelloRules.legal_actions(player_bits, opp_bits, include_pass=True)
         return actions
 
     def apply_action(self, action: Action) -> "OthelloState":
@@ -102,9 +100,9 @@ class OthelloState(GameStateProtocol):
                 idx = r * BOARD_SIZE + c
                 piece = board[idx]
                 if piece == OthelloRules.PLAYER_BLACK:
-                    symbol = color.colorize("B", fg="bright_white")
+                    symbol = color.colorize("B", fg="gray")
                 elif piece == OthelloRules.PLAYER_WHITE:
-                    symbol = color.colorize("W", fg="gray")
+                    symbol = color.colorize("W", fg="bright_white")
                 else:
                     symbol = color.colorize("·", fg="bright_black")
                 row_cells.append(symbol)

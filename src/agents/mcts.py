@@ -344,7 +344,12 @@ class MonteCarloTreeSearch(Agent):
         return child.q_value() + exploration
 
     def _sim_agent_move(self, state: GameStateProtocol) -> Action:
-        return self.sim_agent.select_action(state)
+        if self.sim_agent is not None:
+            return self.sim_agent.select_action(state)
+        legal = list(state.legal_actions())
+        if not legal:
+            return None
+        return self.random.choice(legal)
 
     def _random_move(
         self, state: GameStateProtocol
